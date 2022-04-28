@@ -1,6 +1,7 @@
 ﻿using PizzaApp.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,15 +11,15 @@ namespace PizzaApp.Repositories
 {
     public interface IPizzaRepository
     {
-        List<MenuItem> CreateMenuItemList();
-        List<Topping> CreateToppingList();
+        ObservableCollection<MenuItem> CreateMenuItemList();
+        ObservableCollection<Topping> CreateToppingList();
     }
 
     public class PizzaRepository : IPizzaRepository
     {
-        public List<Topping> CreateToppingList()
+        public ObservableCollection<Topping> CreateToppingList()
         {
-            return new List<Topping>
+            return new ObservableCollection<Topping>
             {
                 new Topping { Name = "Pepperoni" },
                 new Topping { Name = "Green Peppers" },
@@ -31,9 +32,9 @@ namespace PizzaApp.Repositories
             };
         }
 
-        public List<MenuItem> CreateMenuItemList()
+        public ObservableCollection<MenuItem> CreateMenuItemList()
         {
-            return new List<MenuItem>
+            return new ObservableCollection<MenuItem>
             {
                 new MenuItem {Name = "Pizza", Price = 14.95 },
                 new MenuItem {Name = "Wings", Price = 10.99 },

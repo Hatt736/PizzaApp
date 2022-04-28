@@ -2,6 +2,7 @@
 using PizzaApp.Repositories;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,16 +13,19 @@ namespace PizzaApp.ViewModels
     public class OrderPageViewModel
     {
         IPizzaRepository _pizzaRepository;
-        public OrderPageViewModel(IPizzaRepository pizzaRepository)
+
+
+
+        public OrderPageViewModel()
         {
-            _pizzaRepository = pizzaRepository;
+            _pizzaRepository = new PizzaRepository();
 
             MenuList = _pizzaRepository.CreateMenuItemList();
 
             Toppings = _pizzaRepository.CreateToppingList();
         }
 
-        public List<MenuItem> MenuList { get; set; }
-        public List<Topping> Toppings { get; set; }
+        public ObservableCollection<MenuItem> MenuList { get; set; }
+        public ObservableCollection<Topping> Toppings { get; set; }
     }
 }

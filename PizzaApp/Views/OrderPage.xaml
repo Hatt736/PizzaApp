@@ -8,6 +8,7 @@
     <ContentPage.BindingContext>
         <viewModel:OrderPageViewModel />
     </ContentPage.BindingContext>
+    
     <StackLayout Padding="25">
 
         <Label
@@ -18,8 +19,8 @@
             VerticalOptions="Start" />
 
         <CollectionView 
-            x:Name="MenuListView"
             Margin="30"
+           ItemsSource = "MenuList"
             VerticalOptions="StartAndExpand"
             HorizontalOptions="Fill">
             <CollectionView.ItemTemplate>                
@@ -35,7 +36,7 @@
         </CollectionView>
 
         <CollectionView
-            x:Name="ToppingListView"
+           ItemsSource = "Toppings"
             Margin="30"
             VerticalOptions="StartAndExpand"
             HorizontalOptions="FillAndExpand">

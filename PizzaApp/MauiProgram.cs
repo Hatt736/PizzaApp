@@ -1,4 +1,5 @@
 ﻿using PizzaApp.Repositories;
+using PizzaApp.ViewModels;
 
 namespace PizzaApp;
 
@@ -16,7 +17,8 @@ public static class MauiProgram
 			});
 
 		builder.Services.AddSingleton<IPizzaRepository, PizzaRepository>();
-
+		builder.Services.AddTransient<OrderPage>();
+		builder.Services.AddTransient<OrderPageViewModel>();
 		return builder.Build();
 	}
 }

@@ -11,6 +11,6 @@ public partial class OrderPage : ContentPage
     {
         InitializeComponent();
 
-  
+     
     }
 }
