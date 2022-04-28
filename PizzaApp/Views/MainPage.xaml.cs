@@ -19,5 +19,12 @@ public partial class MainPage : ContentPage
 		//await Navigation.PushAsync<OrderPage>();
 		await Navigation.PushAsync(page);
 	}
+	private async void OnSettingsClicked(object sender, EventArgs e)
+	{
+		var page = new SettingsPage();
+		//page.BindingContext = new OrderPageViewModel(new PizzaRepository());
+		//await Navigation.PushAsync<OrderPage>();
+		await Navigation.PushAsync(page);
+	}
 }
 

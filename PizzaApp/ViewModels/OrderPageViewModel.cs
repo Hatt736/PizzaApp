@@ -15,7 +15,7 @@ namespace PizzaApp.ViewModels
 
         public OrderPageViewModel(IPizzaRepository pizzaRepository)
         {
-            _pizzaRepository = pizzaRepository; // new PizzaRepository();
+            _pizzaRepository = pizzaRepository;
 
             MenuCollection = new ObservableCollection<PizzaMenuItem>(_pizzaRepository.CreateMenuItemCollection());
 

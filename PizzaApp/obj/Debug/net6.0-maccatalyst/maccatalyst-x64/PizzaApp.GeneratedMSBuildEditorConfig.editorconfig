@@ -38,3 +38,9 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = PizzaApp.Views.OrderPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\OrderPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\OrderPage.xaml
+
+[D:/Apps/JointApps/PizzaApp/PizzaApp/Views/SettingsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PizzaApp.Views.SettingsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SettingsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SettingsPage.xaml

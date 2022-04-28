@@ -10,5 +10,9 @@
         Title="Hello, World!"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
-
+    
+  <ShellContent
+        Title="Test!"
+        ContentTemplate="{DataTemplate local:OrderPage}"
+        Route="OrderPage" />
 </Shell>
