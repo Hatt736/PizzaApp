@@ -12,6 +12,7 @@
     <StackLayout Padding="25">
 
         <Label
+            Margin="20"
             FontAttributes="Bold"
             FontSize="Large"
             HorizontalOptions="Center"

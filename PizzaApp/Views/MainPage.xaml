@@ -2,8 +2,7 @@
 <ContentPage
     x:Class="PizzaApp.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    BackgroundColor="Black">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" >
 
     <ScrollView>
         <VerticalStackLayout Padding="30" Spacing="25">
@@ -12,8 +11,7 @@
                 FontSize="60"
                 HorizontalOptions="Center"
                 SemanticProperties.HeadingLevel="Level1"
-                Text="Hatt's Pizza!"
-                TextColor="Green" />
+                Text="Hatt's Pizza!" />
 
             <Label
                 Margin="0,-40,0,0"
@@ -21,8 +19,7 @@
                 FontSize="Medium"
                 HorizontalOptions="Center"
                 HorizontalTextAlignment="Center"
-                Text="The best pizza in the world!"
-                TextColor="Red" />
+                Text="The best pizza in the world!"  />
 
             <Frame
                 Margin="40"
@@ -38,7 +35,6 @@
             </Frame>
 
             <Button
-                BackgroundColor="Green"
                 Clicked="OnOrderClicked"
                 CornerRadius="50"
                 FontAttributes="Bold"
