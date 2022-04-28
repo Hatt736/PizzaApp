@@ -1,17 +1,17 @@
-﻿namespace PizzaApp;
+﻿using PizzaApp.ViewModels;
+
+namespace PizzaApp;
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
-
 	public MainPage()
 	{
 		InitializeComponent();
 	}
 
-	private void OnOrderClicked(object sender, EventArgs e)
+	private async void OnOrderClicked(object sender, EventArgs e)
 	{
-		Navigation.PushAsync(new OrderPage());
+		await Navigation.PushAsync(new OrderPage());
 	}
 }
 

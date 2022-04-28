@@ -1,16 +1,12 @@
-
-
 namespace PizzaApp;
-using PizzaApp.Models;
-using PizzaApp.Repositories;
 using PizzaApp.ViewModels;
 
 public partial class OrderPage : ContentPage
 {
-        public OrderPage()
+    public OrderPage()
     {
         InitializeComponent();
 
-     
+        BindingContext = new OrderPageViewModel();
     }
 }

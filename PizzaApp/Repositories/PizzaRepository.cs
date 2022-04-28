@@ -11,13 +11,13 @@ namespace PizzaApp.Repositories
 {
     public interface IPizzaRepository
     {
-        ObservableCollection<MenuItem> CreateMenuItemList();
-        ObservableCollection<Topping> CreateToppingList();
+        ObservableCollection<MenuItem> CreateMenuItemCollection();
+        ObservableCollection<Topping> CreateToppingCollection();
     }
 
     public class PizzaRepository : IPizzaRepository
     {
-        public ObservableCollection<Topping> CreateToppingList()
+        public ObservableCollection<Topping> CreateToppingCollection()
         {
             return new ObservableCollection<Topping>
             {
@@ -32,7 +32,7 @@ namespace PizzaApp.Repositories
             };
         }
 
-        public ObservableCollection<MenuItem> CreateMenuItemList()
+        public ObservableCollection<MenuItem> CreateMenuItemCollection()
         {
             return new ObservableCollection<MenuItem>
             {

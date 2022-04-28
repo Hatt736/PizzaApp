@@ -10,19 +10,17 @@ using MenuItem = PizzaApp.Models.MenuItem;
 
 namespace PizzaApp.ViewModels
 {
-    public class OrderPageViewModel
+    public class OrderPageViewModel : BaseViewModel
     {
         IPizzaRepository _pizzaRepository;
-
-
 
         public OrderPageViewModel()
         {
             _pizzaRepository = new PizzaRepository();
 
-            MenuList = _pizzaRepository.CreateMenuItemList();
+            MenuList = new ObservableCollection<MenuItem>(_pizzaRepository.CreateMenuItemCollection());
 
-            Toppings = _pizzaRepository.CreateToppingList();
+            Toppings = new ObservableCollection<Topping>(_pizzaRepository.CreateToppingCollection());
         }
 
         public ObservableCollection<MenuItem> MenuList { get; set; }
