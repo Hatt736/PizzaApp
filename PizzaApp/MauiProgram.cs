@@ -18,8 +18,9 @@ public static class MauiProgram
 
 		builder.Services.AddSingleton<IPizzaRepository, PizzaRepository>();
 		builder.Services.AddTransient<MainPage>();
+		builder.Services.AddTransient<MainPageViewModel>();
 		builder.Services.AddTransient<OrderPage>();
-		builder.Services.AddSingleton<OrderPageViewModel>();
+		builder.Services.AddTransient<OrderPageViewModel>();
 		return builder.Build();
 	}
 }

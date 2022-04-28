@@ -4,10 +4,12 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:viewModels="clr-namespace:PizzaApp.ViewModels"
-    Title="Order Page">
-    <ContentPage.BindingContext>
+    xmlns:models="clr-namespace:PizzaApp.Models"
+    Title="Order Page"
+    x:DataType ="viewModels:OrderPageViewModel">
+    <!--<ContentPage.BindingContext>
         <viewModels:OrderPageViewModel />
-    </ContentPage.BindingContext>
+    </ContentPage.BindingContext>-->
 
     <StackLayout Padding="25">
 
@@ -25,7 +27,7 @@
             ItemsSource="{Binding MenuCollection}"
             VerticalOptions="StartAndExpand">
             <CollectionView.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate x:DataType="models:PizzaMenuItem" >
                     <HorizontalStackLayout HorizontalOptions="Fill">
                         <Label
                             FontAttributes="Bold"
@@ -45,7 +47,7 @@
             ItemsSource="{Binding Toppings}"
             VerticalOptions="StartAndExpand">
             <CollectionView.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate x:DataType="models:Topping">
                     <HorizontalStackLayout>
                         <Label Text="{Binding Name}" />
                     </HorizontalStackLayout>

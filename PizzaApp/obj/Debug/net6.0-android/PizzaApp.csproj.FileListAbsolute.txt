@@ -1041,10 +1041,10 @@ D:\Apps\JointApps\PizzaApp\PizzaApp\obj\Debug\net6.0-android\stamp\_ConvertResou
 D:\Apps\JointApps\PizzaApp\PizzaApp\obj\Debug\net6.0-android\stamp\_GenerateJavaStubs.stamp
 D:\Apps\JointApps\PizzaApp\PizzaApp\obj\Debug\net6.0-android\stamp\_GeneratePackageManagerJava.stamp
 D:\Apps\JointApps\PizzaApp\PizzaApp\obj\Debug\net6.0-android\stamp\_ResolveLibraryProjectImports.stamp
-D:\Apps\JointApps\PizzaApp\PizzaApp\obj\Debug\net6.0-android\android\typemaps.x86.s
-D:\Apps\JointApps\PizzaApp\PizzaApp\obj\Debug\net6.0-android\android\environment.x86.s
-D:\Apps\JointApps\PizzaApp\PizzaApp\obj\Debug\net6.0-android\android\compressed_assemblies.x86.s
-D:\Apps\JointApps\PizzaApp\PizzaApp\obj\Debug\net6.0-android\android\typemaps.x86.o
-D:\Apps\JointApps\PizzaApp\PizzaApp\obj\Debug\net6.0-android\android\environment.x86.o
-D:\Apps\JointApps\PizzaApp\PizzaApp\obj\Debug\net6.0-android\android\compressed_assemblies.x86.o
-D:\Apps\JointApps\PizzaApp\PizzaApp\obj\Debug\net6.0-android\app_shared_libraries\x86\libxamarin-app.so
+D:\Apps\JointApps\PizzaApp\PizzaApp\obj\Debug\net6.0-android\android\typemaps.arm64-v8a.s
+D:\Apps\JointApps\PizzaApp\PizzaApp\obj\Debug\net6.0-android\android\environment.arm64-v8a.s
+D:\Apps\JointApps\PizzaApp\PizzaApp\obj\Debug\net6.0-android\android\compressed_assemblies.arm64-v8a.s
+D:\Apps\JointApps\PizzaApp\PizzaApp\obj\Debug\net6.0-android\android\typemaps.arm64-v8a.o
+D:\Apps\JointApps\PizzaApp\PizzaApp\obj\Debug\net6.0-android\android\environment.arm64-v8a.o
+D:\Apps\JointApps\PizzaApp\PizzaApp\obj\Debug\net6.0-android\android\compressed_assemblies.arm64-v8a.o
+D:\Apps\JointApps\PizzaApp\PizzaApp\obj\Debug\net6.0-android\app_shared_libraries\arm64-v8a\libxamarin-app.so
