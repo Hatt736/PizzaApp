@@ -7,6 +7,6 @@ public partial class OrderPage : ContentPage
     {
         InitializeComponent();
 
-        BindingContext = new OrderPageViewModel();
+      //  BindingContext = new OrderPageViewModel();
     }
 }

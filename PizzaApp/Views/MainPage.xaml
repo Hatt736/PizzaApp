@@ -15,30 +15,36 @@
                 Text="Hatt's Pizza!"
                 TextColor="Green" />
 
+            <Label
+                Margin="0,-40,0,0"
+                FontAttributes="Italic"
+                FontSize="Medium"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"
+                Text="The best pizza in the world!"
+                TextColor="Red" />
+
             <Frame
-                Margin="0,50"
+                Margin="40"
                 Padding="0"
-                BorderColor="Green"
                 CornerRadius="120"
                 HorizontalOptions="Center"
                 IsClippedToBounds="True">
                 <Image
                     Margin="0"
                     HeightRequest="250"
-                    SemanticProperties.Description="Cute dot net bot waving hi to you!"
                     Source="pizza_main_picture.jpg"
                     WidthRequest="250" />
             </Frame>
 
             <Button
+                BackgroundColor="Green"
                 Clicked="OnOrderClicked"
                 CornerRadius="50"
                 FontAttributes="Bold"
                 FontSize="Large"
-                BackgroundColor="Red"
                 HeightRequest="100"
                 HorizontalOptions="Center"
-                SemanticProperties.Hint="Counts the number of times you click"
                 Text="Order"
                 WidthRequest="100" />
         </VerticalStackLayout>

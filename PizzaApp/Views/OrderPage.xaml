@@ -3,11 +3,12 @@
     x:Class="PizzaApp.OrderPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:viewModel = "clr-namespace:PizzaApp.ViewModels"
-    x:DataType="viewModel:OrderPageViewModel"
+    xmlns:viewModels="clr-namespace:PizzaApp.ViewModels"
     Title="Order Page">
-    
-       
+    <ContentPage.BindingContext>
+        <viewModels:OrderPageViewModel />
+    </ContentPage.BindingContext>
+
     <StackLayout Padding="25">
 
         <Label
@@ -17,32 +18,35 @@
             Text="MENU"
             VerticalOptions="Start" />
 
-        <CollectionView 
+        <CollectionView
             Margin="30"
-           ItemsSource="{Binding MenuList}"
-            VerticalOptions="StartAndExpand"
-            HorizontalOptions="Fill">
-            <CollectionView.ItemTemplate>                
-            <DataTemplate>
-                    <HorizontalStackLayout HorizontalOptions="Fill" >
-                        <Label Text ="{Binding Name}" FontAttributes="Bold" HorizontalTextAlignment="Start"/>
-                        <Label Text="..............." HorizontalTextAlignment="Center"/>
-                        <Label Text ="{Binding Price}" HorizontalTextAlignment="End"  />
+            HorizontalOptions="Fill"
+            ItemsSource="{Binding MenuCollection}"
+            VerticalOptions="StartAndExpand">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <HorizontalStackLayout HorizontalOptions="Fill">
+                        <Label
+                            FontAttributes="Bold"
+                            HorizontalTextAlignment="Start"
+                            Text="{Binding Name}" />
+                        <Label HorizontalTextAlignment="Center" Text="..............." />
+                        <Label HorizontalTextAlignment="End" Text="{Binding Price}" />
                     </HorizontalStackLayout>
-                
-            </DataTemplate>
+
+                </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
 
         <CollectionView
-           ItemsSource = "{Binding Toppings}"
             Margin="30"
-            VerticalOptions="StartAndExpand"
-            HorizontalOptions="FillAndExpand">
+            HorizontalOptions="FillAndExpand"
+            ItemsSource="{Binding Toppings}"
+            VerticalOptions="StartAndExpand">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <HorizontalStackLayout>
-                        <Label Text ="{Binding Name}" />                                                
+                        <Label Text="{Binding Name}" />
                     </HorizontalStackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

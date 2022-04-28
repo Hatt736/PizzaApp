@@ -5,13 +5,12 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MenuItem = PizzaApp.Models.MenuItem;
 
 namespace PizzaApp.Repositories
 {
     public interface IPizzaRepository
     {
-        ObservableCollection<MenuItem> CreateMenuItemCollection();
+        ObservableCollection<PizzaMenuItem> CreateMenuItemCollection();
         ObservableCollection<Topping> CreateToppingCollection();
     }
 
@@ -32,18 +31,18 @@ namespace PizzaApp.Repositories
             };
         }
 
-        public ObservableCollection<MenuItem> CreateMenuItemCollection()
+        public ObservableCollection<PizzaMenuItem> CreateMenuItemCollection()
         {
-            return new ObservableCollection<MenuItem>
+            return new ObservableCollection<PizzaMenuItem>
             {
-                new MenuItem {Name = "Pizza", Price = 14.95 },
-                new MenuItem {Name = "Wings", Price = 10.99 },
-                new MenuItem { Name = "Sides", Price = 4.99 },
-                new MenuItem { Name = "Pasta", Price = 7.99 },
-                new MenuItem { Name = "Desserts", Price = 6.99 },
-                new MenuItem { Name = "Drinks", Price = 2.99 },
-                new MenuItem { Name = "Dipping sauces", Price = .99 },
-                new MenuItem { Name = "Deals", Price = 5.99 }
+                new PizzaMenuItem {Name = "Pizza", Price = 14.95 },
+                new PizzaMenuItem {Name = "Wings", Price = 10.99 },
+                new PizzaMenuItem { Name = "Sides", Price = 4.99 },
+                new PizzaMenuItem { Name = "Pasta", Price = 7.99 },
+                new PizzaMenuItem { Name = "Desserts", Price = 6.99 },
+                new PizzaMenuItem { Name = "Drinks", Price = 2.99 },
+                new PizzaMenuItem { Name = "Dipping sauces", Price = .99 },
+                new PizzaMenuItem { Name = "Deals", Price = 5.99 }
             };
         }
     }
