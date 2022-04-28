@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PizzaApp.OrderPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewModel = "clr-namespace:PizzaApp.ViewModels"
+    Title="Order Page">
+    <ContentPage.BindingContext>
+        <viewModel:OrderPageViewModel />
+    </ContentPage.BindingContext>
+    <StackLayout Padding="25">
+
+        <Label
+            FontAttributes="Bold"
+            FontSize="Large"
+            HorizontalOptions="Center"
+            Text="MENU"
+            VerticalOptions="Start" />
+
+        <CollectionView 
+            x:Name="MenuListView"
+            Margin="30"
+            VerticalOptions="StartAndExpand"
+            HorizontalOptions="Fill">
+            <CollectionView.ItemTemplate>                
+            <DataTemplate>
+                    <HorizontalStackLayout HorizontalOptions="Fill" >
+                        <Label Text ="{Binding Name}" FontAttributes="Bold" HorizontalTextAlignment="Start"/>
+                        <Label Text="..............." HorizontalTextAlignment="Center"/>
+                        <Label Text ="{Binding Price}" HorizontalTextAlignment="End"  />
+                    </HorizontalStackLayout>
+                
+            </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <CollectionView
+            x:Name="ToppingListView"
+            Margin="30"
+            VerticalOptions="StartAndExpand"
+            HorizontalOptions="FillAndExpand">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <HorizontalStackLayout>
+                        <Label Text ="{Binding Name}" />
+                                                
+                    </HorizontalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Label
+            Margin="10"
+            HorizontalOptions="Center"
+            Text="Create Custom Order!"
+            VerticalOptions="End" />
+    </StackLayout>
+</ContentPage>
