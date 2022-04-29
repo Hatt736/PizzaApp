@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace PizzaApp.ViewModels
 {
@@ -24,5 +25,37 @@ namespace PizzaApp.ViewModels
 
         public ObservableCollection<PizzaMenuItem> MenuCollection{ get; set; }
         public ObservableCollection<Topping> Toppings { get; set; }
+
+        public ObservableCollection<PizzaMenuItem> CartItems { get; set; }
+
+        private object selectedItem;
+
+        public object SelectedItem
+        {
+            get { return selectedItem; }
+            set { selectedItem = value; }
+        }
+
+
+        private ICommand selectItemCommand;
+        public ICommand SelectItemCommand =>
+        selectItemCommand ??
+        (selectItemCommand = new Command<object>(async (x) => await ExecuteSelectItemCommand(x)));
+
+
+
+        private async Task ExecuteSelectItemCommand(object selection)
+        { 
+            if (selection == null)
+                return;
+
+           var selectedItem = selection as PizzaMenuItem;
+
+            CartItems.Add(selectedItem);
+
+
+
+            // await Shell.Current.GoToAsync(OrderPageViewModel());
+        }
     }
 }

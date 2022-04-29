@@ -7,7 +7,9 @@
     xmlns:models="clr-namespace:PizzaApp.Models"
     Title="Order Page"
     x:DataType ="viewModels:OrderPageViewModel">
- 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Cart" Clicked="OnCartClick"/>
+    </ContentPage.ToolbarItems>
     <StackLayout Padding="25">
 
         <Label
@@ -19,7 +21,12 @@
             VerticalOptions="Start" />
 
         <CollectionView
+            x:Name="MenuItemCollectionView"
+            SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+            SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference MenuItemCollectionView }}"
             Margin="30"
+            SelectionChangedCommand="{Binding SelectItemCommand}"
+            SelectionMode="Single"
             HorizontalOptions="Fill"
             ItemsSource="{Binding MenuCollection}"
             VerticalOptions="StartAndExpand">
