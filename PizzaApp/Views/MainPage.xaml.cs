@@ -1,7 +1,7 @@
 ﻿using PizzaApp.Repositories;
 using PizzaApp.ViewModels;
 
-namespace PizzaApp;
+namespace PizzaApp.Views;
 
 public partial class MainPage : ContentPage
 {

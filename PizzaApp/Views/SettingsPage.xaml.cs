@@ -1,6 +1,6 @@
 using Microsoft.Maui.ApplicationModel;
 
-namespace PizzaApp;
+namespace PizzaApp.Views;
 
 public partial class SettingsPage : ContentPage
 {

@@ -12,7 +12,7 @@
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
   </PropertyGroup>
   <ItemGroup>
-    <MauiXaml Update="Views\CartPage.xaml">
+    <MauiXaml Update="Views\ContentViews\CartCV.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="Views\OrderPage.xaml">

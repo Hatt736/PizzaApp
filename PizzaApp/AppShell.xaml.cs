@@ -1,4 +1,6 @@
-﻿namespace PizzaApp;
+﻿using PizzaApp.Views;
+
+namespace PizzaApp;
 
 public partial class AppShell : Shell
 {

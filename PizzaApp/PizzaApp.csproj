@@ -50,8 +50,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Views\CartPage.xaml.cs">
-	    <DependentUpon>CartPage.xaml</DependentUpon>
+	  <PackageReference Include="CommunityToolkit.Mvvm" Version="7.1.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Views\ContentViews\CartCV.xaml.cs">
+	    <DependentUpon>CartCV.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Views\OrderPage.xaml.cs">
 	    <DependentUpon>OrderPage.xaml</DependentUpon>
@@ -59,7 +63,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Views\CartPage.xaml">
+	  <MauiXaml Update="Views\ContentViews\CartCV.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\OrderPage.xaml">

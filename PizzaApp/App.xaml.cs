@@ -1,5 +1,7 @@
 ﻿using Microsoft.Maui.ApplicationModel;
 
+using PizzaApp.Views;
+
 namespace PizzaApp;
 
 public partial class App : Application
