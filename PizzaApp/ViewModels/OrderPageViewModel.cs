@@ -66,7 +66,7 @@ namespace PizzaApp.ViewModels
 
             CartItems.Add(selectedItem);
 
-          //  SelectedItem = null;
+            SelectedItem = null;
         }
 
         private ICommand toggleCartCommand;
