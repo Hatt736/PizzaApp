@@ -30,6 +30,9 @@
             HorizontalOptions="Fill"
             ItemsSource="{Binding MenuCollection}"
             VerticalOptions="StartAndExpand">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="8" />
+            </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:PizzaMenuItem" >
                     <HorizontalStackLayout HorizontalOptions="Fill">
