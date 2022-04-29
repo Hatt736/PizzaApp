@@ -29,36 +29,70 @@ namespace PizzaApp.ViewModels
         public ObservableCollection<PizzaMenuItem> MenuCollection { get; set; }
         public ObservableCollection<Topping> Toppings { get; set; }
 
-        public ObservableCollection<PizzaMenuItem> CartItems { get; set; }
+
+        private ObservableCollection<PizzaMenuItem> cartItems;
+        public ObservableCollection<PizzaMenuItem> CartItems
+        {
+            get { return cartItems; }
+            set
+            {
+                cartItems = value;
+                OnPropertyChanged();
+            }
+        }
 
         private object selectedItem;
-
         public object SelectedItem
         {
             get { return selectedItem; }
-            set { selectedItem = value; }
+            set { selectedItem = value;
+                OnPropertyChanged(); }
         }
 
 
         private ICommand selectItemCommand;
         public ICommand SelectItemCommand =>
         selectItemCommand ??
-        (selectItemCommand = new Command<object>(async (x) => await ExecuteSelectItemCommand(x)));
+        (selectItemCommand = new Command<object>((x) => ExecuteSelectItemCommand(x)));
 
-
-
-        private async Task ExecuteSelectItemCommand(object selection)
+        private void ExecuteSelectItemCommand(object selection)
         {
             if (selection == null)
                 return;
 
-            selection = null;
-
             var selectedItem = selection as PizzaMenuItem;
+
+            selection = null;
 
             CartItems.Add(selectedItem);
 
-            selectedItem = null;
+            SelectedItem = null;
         }
+
+        private ICommand toggleCartCommand;
+        public ICommand ToggleCartCommand =>
+        toggleCartCommand ??
+        (toggleCartCommand = new Command(ExecuteToggleCartCommand));
+
+        private void ExecuteToggleCartCommand()
+        {
+              ShoppingCartVisible = !ShoppingCartVisible;
+        }
+
+
+       private bool shoppingCartVisible;
+        public bool ShoppingCartVisible
+        {
+            get { return shoppingCartVisible; }
+            set
+            {
+                shoppingCartVisible = value;
+                 OnPropertyChanged();
+            }
+        }
+
+
     }
+
 }
+
