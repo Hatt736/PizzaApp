@@ -30,9 +30,11 @@
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" Color="#512BD4" />
+		<MauiSplashScreen Include="Resources\Images\pizza_background.jpg" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\appiconfg.svg" Color="#512BD4" BaseSize="128,128" />
+		<!--<MauiSplashScreen Include="Resources\Images\pizza_main_picture.jpg" Color="#000000" BaseSize="128,128" />-->
+		<!--<MauiSplashScreen Include="Resources\appiconfg.svg" Color="#000000" BaseSize="128,128" />-->
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
@@ -42,6 +44,11 @@
 
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiImage Remove="Resources\Images\pizza_background.jpg" />
+	  <MauiImage Remove="Resources\Images\pizza_main_picture.jpg" />
 	</ItemGroup>
 
 	<ItemGroup>
