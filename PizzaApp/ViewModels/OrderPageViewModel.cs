@@ -23,15 +23,15 @@ namespace PizzaApp.ViewModels
 
             Toppings = new ObservableCollection<Topping>(_pizzaRepository.CreateToppingCollection());
 
-            CartItems = new ObservableCollection<PizzaMenuItem>();
+            CartItems = new ObservableCollection<CartItem>();
         }
 
         public ObservableCollection<PizzaMenuItem> MenuCollection { get; set; }
         public ObservableCollection<Topping> Toppings { get; set; }
 
 
-        private ObservableCollection<PizzaMenuItem> cartItems;
-        public ObservableCollection<PizzaMenuItem> CartItems
+        private ObservableCollection<CartItem> cartItems;
+        public ObservableCollection<CartItem> CartItems
         {
             get { return cartItems; }
             set
@@ -74,13 +74,34 @@ namespace PizzaApp.ViewModels
 
             selection = null;
 
-            CartItems.Add(selectedItem);
+            string name = selectedItem.Name;
+
+            double price = selectedItem.Price;
+
+            CalculateQuanities(name, price);
 
            Subtotal = AddSubTotal();
+
+            
 
             SelectedItem = null;
         }
 
+        private void CalculateQuanities(string name, double price)
+        {
+            foreach (var item in CartItems)
+            {
+                if (item.Name == name)
+                {
+                    item.Quanity++ ;
+                    item.Price += price;
+
+                    return;
+                }               
+            }
+            
+            CartItems.Add(new CartItem(name, price, 1));
+        }
 
         private double AddSubTotal()
         {
