@@ -29,7 +29,9 @@
 
 	<ItemGroup>
 		<!-- App Icon -->	
-    <MauiIcon Include="Resources\appicon3.svg" ForegroundFile="Resources\icon.svg" Color="#000000" />
+    <!--<MauiIcon Include="Resources\appicon3.svg" ForegroundFile="Resources\icon.svg" Color="#000000" />-->	
+   	
+    <MauiIcon Include="Resources\Images\appiconfg.svg" />
 		<!--<MauiIcon Include="Resources\icon.png" />	-->
 		<!--<MauiIcon Include="Resources\appiconfg.svg" />-->	
 		<!--<MauiIcon Include="Resources\appicon2.svg" ForegroundFile="Resources\appiconfg.svg" Color="#000000" />-->
@@ -51,12 +53,19 @@
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <MauiImage Remove="Resources\Images\appiconfg.svg" />
+	</ItemGroup>
+
 
 
 	<ItemGroup>
 	  <None Remove="Resources\appicon.svg" />
 	  <None Remove="Resources\appiconfg.svg" />
 	  <None Remove="Resources\Icon.png" />
+	  <None Remove="Resources\icon.svg" />
+	  <None Remove="Resources\Images\appicon.svg" />
+	  <None Remove="Resources\Images\appiconfg.svg" />
 	  <None Remove="Resources\Images\pizza_background.jpg" />
 	  <None Remove="Resources\Images\pizza_main_picture.jpg" />
 	  <None Remove="Resources\Images\pizza_splashscreen.png" />

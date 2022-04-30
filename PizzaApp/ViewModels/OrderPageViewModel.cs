@@ -41,6 +41,16 @@ namespace PizzaApp.ViewModels
             }
         }
 
+        private double subtotal;
+
+        public double Subtotal
+        {
+            get { return subtotal; }
+            set { subtotal = value; 
+                OnPropertyChanged(); }
+        }
+
+
         private object selectedItem;
         public object SelectedItem
         {
@@ -66,7 +76,22 @@ namespace PizzaApp.ViewModels
 
             CartItems.Add(selectedItem);
 
+           Subtotal = AddSubTotal();
+
             SelectedItem = null;
+        }
+
+
+        private double AddSubTotal()
+        {
+            double amount = 0.00;
+             
+            foreach (var item in CartItems)
+            {
+                amount += item.Price;
+            }
+
+            return amount;
         }
 
         private ICommand toggleCartCommand;
