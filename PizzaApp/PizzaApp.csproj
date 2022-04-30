@@ -29,7 +29,7 @@
 
 	<ItemGroup>
 		<!-- App Icon -->	
-    <MauiIcon Include="Resources\appicon2.svg" ForegroundFile="Resources\appicon.svg"   Color="#000000"/>
+    <MauiIcon Include="Resources\appicon3.svg" ForegroundFile="Resources\icon.svg" Color="#000000" />
 		<!--<MauiIcon Include="Resources\icon.png" />	-->
 		<!--<MauiIcon Include="Resources\appiconfg.svg" />-->	
 		<!--<MauiIcon Include="Resources\appicon2.svg" ForegroundFile="Resources\appiconfg.svg" Color="#000000" />-->
