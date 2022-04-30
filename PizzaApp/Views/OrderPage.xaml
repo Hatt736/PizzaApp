@@ -3,58 +3,71 @@
     x:Class="PizzaApp.Views.OrderPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:viewModels="clr-namespace:PizzaApp.ViewModels"
-    xmlns:models="clr-namespace:PizzaApp.Models"
     xmlns:contentViews="clr-namespace:PizzaApp.Views.ContentViews"
     xmlns:converters="clr-namespace:PizzaApp.Converters"
+    xmlns:models="clr-namespace:PizzaApp.Models"
+    xmlns:viewModels="clr-namespace:PizzaApp.ViewModels"
     Title="Order Page"
-    x:DataType ="viewModels:OrderPageViewModel">
+    x:DataType="viewModels:OrderPageViewModel">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Cart" Command ="{Binding ToggleCartCommand}"/>
+        <ToolbarItem Command="{Binding ToggleCartCommand}" Text="Cart" />
     </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <converters:InverseBoolConverter x:Key="InverseBoolConverter" />
     </ContentPage.Resources>
-    <Grid RowDefinitions="*" >
-        <StackLayout Padding="25"  IsVisible="{Binding ShoppingCartVisible, Converter={StaticResource InverseBoolConverter}}">
+    <Grid RowDefinitions="*">
+        <StackLayout Padding="25" IsVisible="{Binding ShoppingCartVisible, Converter={StaticResource InverseBoolConverter}}">
 
-        <Label
-            Margin="20"
-            FontAttributes="Bold"
-            FontSize="Large"
-            HorizontalOptions="Center"
-            Text="MENU"
-            VerticalOptions="Start" />
+            <Label
+                Margin="20"
+                FontAttributes="Bold"
+                FontSize="Large"
+                HorizontalOptions="Center"
+                Text="MENU"
+                VerticalOptions="Start" />
 
-        <CollectionView
-            x:Name="MenuItemCollectionView" 
-            SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
-            SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference MenuItemCollectionView }}"
-            Margin="30, 10"
-            SelectionChangedCommand="{Binding SelectItemCommand}"
-            SelectionMode="Single"
-            HorizontalOptions="Fill"
-            ItemsSource="{Binding MenuCollection}"
-            VerticalOptions="StartAndExpand">
-            <CollectionView.ItemsLayout>
-                <LinearItemsLayout Orientation="Vertical" ItemSpacing="16" />
-            </CollectionView.ItemsLayout>
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="models:PizzaMenuItem" >
-                    <HorizontalStackLayout HorizontalOptions="Fill">
-                        <Label
-                            FontAttributes="Bold"
-                            HorizontalTextAlignment="Start"
-                            Text="{Binding Name}" />
-                        <Label HorizontalTextAlignment="Center" Text="..............." />
-                        <Label HorizontalTextAlignment="End" Text="{Binding Price}" />
-                    </HorizontalStackLayout>
+            <CollectionView
+                x:Name="MenuItemCollectionView"
+                Margin="30,10"
+                HorizontalOptions="Fill"
+                ItemsSource="{Binding MenuCollection}"
+                Header="{Binding MenuCollection }"
+                SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                SelectionChangedCommand="{Binding SelectItemCommand}"
+                SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference MenuItemCollectionView}}"
+                SelectionMode="Single"
+                VerticalOptions="StartAndExpand">
+                <CollectionView.HeaderTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label
+                                Margin="10,0,0,0"
+                                FontAttributes="Bold"
+                                FontSize="Small"
+                                Text="{Binding Category}" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.HeaderTemplate>
 
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout ItemSpacing="16" Orientation="Vertical" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:PizzaMenuItem">
+                        <HorizontalStackLayout HorizontalOptions="Fill">
+                            <Label
+                                FontAttributes="Bold"
+                                HorizontalTextAlignment="Start"
+                                Text="{Binding Name}" />
+                            <Label HorizontalTextAlignment="Center" Text="..............." />
+                            <Label HorizontalTextAlignment="End" Text="{Binding Price}" />
+                        </HorizontalStackLayout>
 
-        <CollectionView
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!--<CollectionView
             Margin="30, 10"
             HorizontalOptions="FillAndExpand"
             ItemsSource="{Binding Toppings}"
@@ -66,14 +79,17 @@
                     </HorizontalStackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
-        </CollectionView>
-        <Label
-            Margin="0, 5"
-            HorizontalOptions="Center"
-            Text="Create Custom Order!"
-            VerticalOptions="End" />
-    </StackLayout>
-        <contentViews:CartCV Margin="25" Grid.Row="0" IsVisible="{Binding ShoppingCartVisible}" />
+        </CollectionView>-->
+            <Label
+                Margin="0,5"
+                HorizontalOptions="Center"
+                Text="Create Custom Order!"
+                VerticalOptions="End" />
+        </StackLayout>
+        <contentViews:CartCV
+            Grid.Row="0"
+            Margin="25"
+            IsVisible="{Binding ShoppingCartVisible}" />
 
     </Grid>
 </ContentPage>
