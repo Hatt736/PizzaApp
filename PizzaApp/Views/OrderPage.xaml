@@ -30,30 +30,31 @@
                 x:Name="MenuItemCollectionView"
                 Margin="30,10"
                 HorizontalOptions="Fill"
-                ItemsSource="{Binding MenuCollection}"
-                Header="{Binding MenuCollection }"
+                IsGrouped="True"
+                ItemsSource="{Binding GroupedTakeoutCollection}"
                 SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
                 SelectionChangedCommand="{Binding SelectItemCommand}"
                 SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference MenuItemCollectionView}}"
                 SelectionMode="Single"
                 VerticalOptions="StartAndExpand">
-                <CollectionView.HeaderTemplate>
-                    <DataTemplate>
+                <CollectionView.GroupHeaderTemplate>
+                    <DataTemplate x:DataType="models:TakeoutItemCategoryGroup">
                         <StackLayout>
                             <Label
                                 Margin="10,0,0,0"
-                                FontAttributes="Bold"
-                                FontSize="Small"
-                                Text="{Binding Category}" />
+                                FontAttributes="Bold,Italic"
+                                FontSize="Medium"
+                                TextColor="{StaticResource AccentText}"
+                                Text="{Binding CategoryName }" />
                         </StackLayout>
                     </DataTemplate>
-                </CollectionView.HeaderTemplate>
+                </CollectionView.GroupHeaderTemplate>
 
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout ItemSpacing="16" Orientation="Vertical" />
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="models:PizzaMenuItem">
+                    <DataTemplate x:DataType="models:TakeoutMenuItem">
                         <HorizontalStackLayout HorizontalOptions="Fill">
                             <Label
                                 FontAttributes="Bold"

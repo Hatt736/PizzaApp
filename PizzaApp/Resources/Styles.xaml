@@ -14,6 +14,8 @@
     <Color x:Key="DarkPrimary">DarkGreen</Color>
     <Color x:Key="DarkSecondary">LightGreen</Color>
     
+    <Color x:Key="AccentText">Red</Color>
+    
     <Color x:Key="Light">#DFD8F7</Color>
     <Color x:Key="Dark">#2B0B98</Color>
     <Color x:Key="White">White</Color>

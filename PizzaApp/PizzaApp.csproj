@@ -29,9 +29,9 @@
 
 	<ItemGroup>
 		<!-- App Icon -->	
-    <!--<MauiIcon Include="Resources\appicon3.svg" ForegroundFile="Resources\icon.svg" Color="#000000" />-->	
+    <MauiIcon Include="Resources\appicon.svg" ForegroundFile="Resources\icon.svg" Color="#000000" />	
    	
-    <MauiIcon Include="Resources\Images\appiconfg.svg" />
+    <!--<MauiIcon Include="Resources\Images\appiconfg.svg" />-->
 		<!--<MauiIcon Include="Resources\icon.png" />	-->
 		<!--<MauiIcon Include="Resources\appiconfg.svg" />-->	
 		<!--<MauiIcon Include="Resources\appicon2.svg" ForegroundFile="Resources\appiconfg.svg" Color="#000000" />-->
@@ -71,6 +71,7 @@
 	  <None Remove="Resources\Images\pizza_splashscreen.png" />
 	  <None Remove="Resources\Images\pizza_splashscreen2.png" />
 	</ItemGroup>
+
 
 	<ItemGroup>
 	  <PackageReference Include="CommunityToolkit.Mvvm" Version="7.1.2" />

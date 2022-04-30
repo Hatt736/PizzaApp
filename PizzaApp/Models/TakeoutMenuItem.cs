@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PizzaApp.Models
 {
-    public class PizzaMenuItem
+    public class TakeoutMenuItem
     {
         public string Name { get; set; }
         public string Description { get; set; }
