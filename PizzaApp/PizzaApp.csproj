@@ -28,14 +28,19 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<!-- App Icon -->
-		<MauiIcon Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" Color="#512BD4" />
-		<MauiSplashScreen Include="Resources\Images\pizza_background.jpg" />
+		<!-- App Icon -->	
+    <MauiIcon Include="Resources\appicon2.svg" ForegroundFile="Resources\appicon.svg"   Color="#000000"/>
+		<!--<MauiIcon Include="Resources\icon.png" />	-->
+		<!--<MauiIcon Include="Resources\appiconfg.svg" />-->	
+		<!--<MauiIcon Include="Resources\appicon2.svg" ForegroundFile="Resources\appiconfg.svg" Color="#000000" />-->
 
-		<!-- Splash Screen -->
+    
+	<!-- Splash Screen -->	
 		<!--<MauiSplashScreen Include="Resources\Images\pizza_main_picture.jpg" Color="#000000" BaseSize="128,128" />-->
 		<!--<MauiSplashScreen Include="Resources\appiconfg.svg" Color="#000000" BaseSize="128,128" />-->
-
+	  <MauiSplashScreen Include="Resources\Images\pizza_splashscreen2.png" />
+<!---->
+    
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
 
@@ -46,14 +51,16 @@
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <MauiImage Remove="Resources\Images\pizza_background.jpg" />
-	  <MauiImage Remove="Resources\Images\pizza_main_picture.jpg" />
-	</ItemGroup>
+
 
 	<ItemGroup>
+	  <None Remove="Resources\appicon.svg" />
+	  <None Remove="Resources\appiconfg.svg" />
+	  <None Remove="Resources\Icon.png" />
 	  <None Remove="Resources\Images\pizza_background.jpg" />
 	  <None Remove="Resources\Images\pizza_main_picture.jpg" />
+	  <None Remove="Resources\Images\pizza_splashscreen.png" />
+	  <None Remove="Resources\Images\pizza_splashscreen2.png" />
 	</ItemGroup>
 
 	<ItemGroup>
