@@ -6,11 +6,12 @@ namespace PizzaApp;
 
 public partial class App : Application
 {
-    public App(MainPage page)
+    public App()
     {
         InitializeComponent();
 
-        MainPage = new NavigationPage(page);
+        MainPage = new AppShell();
+
       //  App.Current.UserAppTheme = AppTheme.Unspecified;
         Application.Current.RequestedThemeChanged += (s, a) =>
         {

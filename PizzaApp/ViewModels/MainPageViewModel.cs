@@ -1,4 +1,5 @@
 ﻿using PizzaApp.Repositories;
+using PizzaApp.Views;
 
 using System;
 using System.Collections.Generic;
@@ -13,12 +14,10 @@ namespace PizzaApp.ViewModels
     {
        // INavigation _navigation;
 
-        public MainPageViewModel()//INavigation navigation)
+        public MainPageViewModel()
         {
-          //  _navigation = navigation;
+         
         }
-
-
 
         private ICommand myVar;
         public ICommand NavigateToOrderPageCommand =>
@@ -27,10 +26,7 @@ namespace PizzaApp.ViewModels
 
         private async Task ExecuteMyCommand(object x)
         {
-            //Routing.RegisterRoute("orderpage", typeof(OrderPage));
-            // await _navigation.PushAsync(new OrderPage());
-
-           // await Shell.Current.GoToAsync(OrderPageViewModel());
+            await Shell.Current.GoToAsync(nameof(OrderPage));
         }
     }
 }

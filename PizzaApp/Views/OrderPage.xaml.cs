@@ -6,11 +6,11 @@ namespace PizzaApp.Views;
 
 public partial class OrderPage : ContentPage
 {
-    public OrderPage()
+    public OrderPage(OrderPageViewModel vm)
     {
         InitializeComponent();
 
-      //  BindingContext = new OrderPageViewModel();
+        BindingContext = vm;
     }
 
     //private async void OnCartClick(object sender, EventArgs e)

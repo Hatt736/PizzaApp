@@ -11,10 +11,10 @@
         ContentTemplate="{DataTemplate views:MainPage}"
         Route="MainPage" />
     
-  <ShellContent
+  <!--<ShellContent
         Title="Test!"
         ContentTemplate="{DataTemplate views:OrderPage}"
-        Route="OrderPage" />
+        Route="OrderPage" />-->
     
    
 </Shell>

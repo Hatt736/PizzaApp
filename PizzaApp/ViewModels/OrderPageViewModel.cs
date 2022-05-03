@@ -146,7 +146,7 @@ namespace PizzaApp.ViewModels
 
         private async Task ExecuteNavigateToCheckoutCommand(object obj)
         {
-            await Shell.Current.GoToAsync("checkoutpage");// {nameof(CheckoutPage)}");
+            await Shell.Current.GoToAsync(nameof(CheckoutPage));
         }
     }
 }

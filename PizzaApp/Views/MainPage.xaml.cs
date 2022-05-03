@@ -12,13 +12,13 @@ public partial class MainPage : ContentPage
 		BindingContext = vm;
 	}
 
-	private async void OnOrderClicked(object sender, EventArgs e)
-	{
-		var page = new OrderPage();
-		page.BindingContext = new OrderPageViewModel(new TakeoutRepository());
-		//await Navigation.PushAsync<OrderPage>();
-		await Navigation.PushAsync(page);
-	}
+	//private async void OnOrderClicked(object sender, EventArgs e)
+	//{
+	//	var page = new OrderPage();
+	//	page.BindingContext = new OrderPageViewModel(new TakeoutRepository());
+	//	//await Navigation.PushAsync<OrderPage>();
+	//	await Navigation.PushAsync(page);
+	//}
 	private async void OnSettingsClicked(object sender, EventArgs e)
 	{
 		var page = new SettingsPage();

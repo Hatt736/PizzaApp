@@ -8,7 +8,7 @@ public partial class AppShell : Shell
     {
         InitializeComponent();
 
-        Routing.RegisterRoute("orderpage", typeof(OrderPage));
-        Routing.RegisterRoute("checkoutpage", typeof(CheckoutPage));
+        Routing.RegisterRoute(nameof(OrderPage), typeof(OrderPage));
+        Routing.RegisterRoute(nameof(CheckoutPage), typeof(CheckoutPage));
     }
 }

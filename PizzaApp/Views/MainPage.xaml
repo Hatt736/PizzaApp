@@ -37,8 +37,19 @@
                     WidthRequest="250" />
             </Frame>
 
+               <!--<Button
+             Clicked="OnOrderClicked"
+                CornerRadius="75"
+                FontAttributes="Bold"
+                FontSize="Large"
+                HeightRequest="150"
+                HorizontalOptions="Center"
+                VerticalOptions="EndAndExpand"
+                Text="Order"
+                WidthRequest="150" />--> 
+            
             <Button
-                Clicked="OnOrderClicked"
+                Command ="{Binding NavigateToOrderPageCommand}"
                 CornerRadius="75"
                 FontAttributes="Bold"
                 FontSize="Large"
