@@ -66,6 +66,7 @@
 	  <None Remove="Resources\icon.svg" />
 	  <None Remove="Resources\Images\appicon.svg" />
 	  <None Remove="Resources\Images\appiconfg.svg" />
+	  <None Remove="Resources\Images\flyout_header_image.jpg" />
 	  <None Remove="Resources\Images\pizza_background.jpg" />
 	  <None Remove="Resources\Images\pizza_main_picture.jpg" />
 	  <None Remove="Resources\Images\pizza_splashscreen.png" />
