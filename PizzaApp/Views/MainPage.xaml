@@ -2,13 +2,20 @@
 <ContentPage
     x:Class="PizzaApp.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" >
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:fontawesome="clr-namespace:FontAwesome" >
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Settings" Clicked="OnSettingsClicked"/>
+        <ToolbarItem Clicked="OnSettingsClicked">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="FAS-900" Glyph="&#xf013;" />
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>  
     </ContentPage.ToolbarItems>
     <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="25"
-                VerticalOptions="FillAndExpand">
+        <VerticalStackLayout
+            Padding="20"
+            Spacing="25"
+            VerticalOptions="FillAndExpand">
 
             <Label
                 FontSize="60"
@@ -22,7 +29,7 @@
                 FontSize="Medium"
                 HorizontalOptions="Center"
                 HorizontalTextAlignment="Center"
-                Text="The best pizza in the world!"  />
+                Text="The best pizza in the world!" />
 
             <Frame
                 Margin="40"
@@ -37,7 +44,7 @@
                     WidthRequest="250" />
             </Frame>
 
-               <!--<Button
+            <!--<Button
              Clicked="OnOrderClicked"
                 CornerRadius="75"
                 FontAttributes="Bold"
@@ -46,17 +53,17 @@
                 HorizontalOptions="Center"
                 VerticalOptions="EndAndExpand"
                 Text="Order"
-                WidthRequest="150" />--> 
-            
+                WidthRequest="150" />-->
+
             <Button
-                Command ="{Binding NavigateToOrderPageCommand}"
+                Command="{Binding NavigateToOrderPageCommand}"
                 CornerRadius="75"
                 FontAttributes="Bold"
                 FontSize="Large"
                 HeightRequest="150"
                 HorizontalOptions="Center"
-                VerticalOptions="EndAndExpand"
                 Text="Order"
+                VerticalOptions="EndAndExpand"
                 WidthRequest="150" />
         </VerticalStackLayout>
     </ScrollView>

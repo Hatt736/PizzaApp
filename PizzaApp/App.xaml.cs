@@ -2,6 +2,7 @@
 
 using PizzaApp.Views;
 
+
 namespace PizzaApp;
 
 public partial class App : Application

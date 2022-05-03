@@ -9,6 +9,12 @@ using System.Threading.Tasks;
 
 namespace PizzaApp.Repositories
 {
+    public interface ITakeoutRepository
+    {
+        ObservableCollection<TakeoutItemCategoryGroup> CreateGroupedMenuItemsCollection();
+        ObservableCollection<Topping> CreateToppingCollection();
+    }
+
     public partial class TakeoutRepository : ITakeoutRepository
     {
         public ObservableCollection<Topping> CreateToppingCollection()

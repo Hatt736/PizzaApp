@@ -32,7 +32,6 @@
                 HorizontalOptions="Fill"
                 IsGrouped="True"
                 ItemsSource="{Binding GroupedTakeoutCollection}"
-                SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
                 SelectionChangedCommand="{Binding SelectItemCommand}"
                 SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference MenuItemCollectionView}}"
                 SelectionMode="Single"
@@ -44,18 +43,31 @@
                                 Margin="10,0,0,0"
                                 FontAttributes="Bold,Italic"
                                 FontSize="Medium"
-                                TextColor="{StaticResource AccentText}"
-                                Text="{Binding CategoryName }" />
+                                Text="{Binding CategoryName}"
+                                TextColor="{StaticResource AccentText}" />
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.GroupHeaderTemplate>
-
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout ItemSpacing="16" Orientation="Vertical" />
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:TakeoutMenuItem">
                         <HorizontalStackLayout HorizontalOptions="Fill">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" >
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="Transparent" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="Selected">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="Yellow" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
                             <Label
                                 FontAttributes="Bold"
                                 HorizontalTextAlignment="Start"

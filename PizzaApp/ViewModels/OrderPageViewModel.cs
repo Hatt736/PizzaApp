@@ -86,7 +86,7 @@ namespace PizzaApp.ViewModels
 
             Globals.Total = subtotal + (subtotal * Globals.SalesTax);
 
-            SelectedItem = null;
+          //  SelectedItem = null;
         }
 
         private void CalculateQuanities(string name, double price)

@@ -54,6 +54,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Remove="Resources\Fonts\FontAwesome.cs" />
+	  <Compile Remove="Resources\Fonts\FontAwesomeIcons.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiImage Remove="Resources\Images\appiconfg.svg" />
 	</ItemGroup>
 
@@ -62,6 +67,9 @@
 	<ItemGroup>
 	  <None Remove="Resources\appicon.svg" />
 	  <None Remove="Resources\appiconfg.svg" />
+	  <None Remove="Resources\Fonts\Font Awesome 6 Brands-Regular-400.otf" />
+	  <None Remove="Resources\Fonts\Font Awesome 6 Free-Regular-400.otf" />
+	  <None Remove="Resources\Fonts\Font Awesome 6 Free-Solid-900.otf" />
 	  <None Remove="Resources\Icon.png" />
 	  <None Remove="Resources\icon.svg" />
 	  <None Remove="Resources\Images\appicon.svg" />
