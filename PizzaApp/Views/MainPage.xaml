@@ -7,7 +7,8 @@
         <ToolbarItem Text="Settings" Clicked="OnSettingsClicked"/>
     </ContentPage.ToolbarItems>
     <ScrollView>
-        <VerticalStackLayout Padding="30" Spacing="25">
+        <VerticalStackLayout Padding="20" Spacing="25"
+                VerticalOptions="FillAndExpand">
 
             <Label
                 FontSize="60"
@@ -38,13 +39,14 @@
 
             <Button
                 Clicked="OnOrderClicked"
-                CornerRadius="50"
+                CornerRadius="75"
                 FontAttributes="Bold"
                 FontSize="Large"
-                HeightRequest="100"
+                HeightRequest="150"
                 HorizontalOptions="Center"
+                VerticalOptions="EndAndExpand"
                 Text="Order"
-                WidthRequest="100" />
+                WidthRequest="150" />
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
