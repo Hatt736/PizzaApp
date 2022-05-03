@@ -1,6 +1,5 @@
 ﻿using PizzaApp.Models;
 using PizzaApp.Repositories;
-
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 
@@ -83,7 +82,9 @@ namespace PizzaApp.ViewModels
 
             Subtotal = AddSubTotal();
 
+            Globals.Subtotal = subtotal;
 
+            Globals.Total = subtotal + (subtotal * Globals.SalesTax);
 
             SelectedItem = null;
         }
@@ -138,7 +139,15 @@ namespace PizzaApp.ViewModels
             }
         }
 
-       
+        private ICommand navigateToCheckoutCommand;
+        public ICommand NavigateToCheckoutCommand =>
+        navigateToCheckoutCommand ??
+        (navigateToCheckoutCommand = new  Command<object>(async (x) => await ExecuteNavigateToCheckoutCommand(x)));
+
+        private async Task ExecuteNavigateToCheckoutCommand(object obj)
+        {
+            await Shell.Current.GoToAsync("checkoutpage");// {nameof(CheckoutPage)}");
+        }
     }
 }
 

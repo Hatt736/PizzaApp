@@ -6,30 +6,42 @@
     xmlns:models="clr-namespace:PizzaApp.Models"
     xmlns:viewModels="clr-namespace:PizzaApp.ViewModels"
     x:DataType="viewModels:OrderPageViewModel">
-    <StackLayout Margin="25">
-        <Label
+    <Grid RowDefinitions="30,*,30,40" Margin="10">
+        
+        <Label Grid.Row="0"
             FontSize="Large"
             HorizontalOptions="Center"
             Text="Your Items!"
             VerticalOptions="Center" />
 
-        <CollectionView Margin="50" ItemsSource="{Binding CartItems}" >
+        <CollectionView Margin="50" ItemsSource="{Binding CartItems}" Grid.Row="1">
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout ItemSpacing="10" Orientation="Vertical" />
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:CartItem">
                     <Grid ColumnDefinitions="*, 3*,*" HorizontalOptions="Center">
-                        <Label Grid.Column = "0" HorizontalTextAlignment="Start" Text="{Binding Quanity}" />
-                        <Label Grid.Column = "1" HorizontalTextAlignment="Start" Text="{Binding Name}" />
-                        <Label Grid.Column = "2" HorizontalTextAlignment="End" Text="{Binding Price}" />
+                        <Label
+                            Grid.Column="0"
+                            HorizontalTextAlignment="Start"
+                            Text="{Binding Quanity}" />
+                        <Label
+                            Grid.Column="1"
+                            HorizontalTextAlignment="Start"
+                            Text="{Binding Name}" />
+                        <Label
+                            Grid.Column="2"
+                            HorizontalTextAlignment="End"
+                            Text="{Binding Price}" />
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
 
-        <Label Text="{Binding Subtotal, StringFormat='Subtotal: {0:c}'}"
-               HorizontalOptions="Center"/>
+        <Label HorizontalOptions="Center" Text="{Binding Subtotal, StringFormat='Subtotal: {0:c}'}" Grid.Row="2" />
+        
+        <Button Text="Checkout" VerticalOptions="EndAndExpand" Margin="0" Grid.Row="3" Command="{Binding NavigateToCheckoutCommand}" />
+       
 
-    </StackLayout>
+    </Grid>
 </ContentView>
