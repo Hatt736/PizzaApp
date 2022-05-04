@@ -3,48 +3,48 @@
     x:Class="PizzaApp.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:fontawesome="clr-namespace:FontAwesome" >
+    xmlns:fontawesome="clr-namespace:FontAwesome">
     <ContentPage.ToolbarItems>
         <ToolbarItem Clicked="OnSettingsClicked">
             <ToolbarItem.IconImageSource>
                 <FontImageSource FontFamily="FAS-900" Glyph="&#xf013;" />
             </ToolbarItem.IconImageSource>
-        </ToolbarItem>  
+        </ToolbarItem>
     </ContentPage.ToolbarItems>
-    <ScrollView>
-        <VerticalStackLayout
-            Padding="20"
-            Spacing="25"
-            VerticalOptions="FillAndExpand">
+    <VerticalStackLayout
+        Padding="20"
+        Spacing="25"
+        VerticalOptions="FillAndExpand">
 
-            <Label
-                FontSize="60"
-                HorizontalOptions="Center"
-                SemanticProperties.HeadingLevel="Level1"
-                Text="Hatt's Pizza!" />
+        <Label
+            FontSize="60"
+            HorizontalOptions="Center"
+            SemanticProperties.HeadingLevel="Level1"
+            Text="Hatt's Pizza!" />
 
-            <Label
-                Margin="0,-40,0,0"
-                FontAttributes="Italic"
-                FontSize="Medium"
-                HorizontalOptions="Center"
-                HorizontalTextAlignment="Center"
-                Text="The best pizza in the world!" />
+        <Label
+            Margin="0,-40,0,0"
+            FontAttributes="Italic"
+            FontSize="Medium"
+            HorizontalOptions="Center"
+            HorizontalTextAlignment="Center"
+            Text="The best pizza in the world!" />
 
-            <Frame
-                Margin="40"
-                Padding="0"
-                CornerRadius="120"
-                HorizontalOptions="Center"
-                IsClippedToBounds="True">
-                <Image
-                    Margin="0"
-                    HeightRequest="250"
-                    Source="pizza_main_picture.jpg"
-                    WidthRequest="250" />
-            </Frame>
+        <Frame
+            Margin="40"
+            Padding="0"
+            CornerRadius="120"
+            HorizontalOptions="Center"
+            IsClippedToBounds="True"
+            VerticalOptions="CenterAndExpand">
+            <Image
+                Margin="0"
+                HeightRequest="250"
+                Source="pizza_main_picture.jpg"
+                WidthRequest="250" />
+        </Frame>
 
-            <!--<Button
+        <!--<Button
              Clicked="OnOrderClicked"
                 CornerRadius="75"
                 FontAttributes="Bold"
@@ -55,16 +55,30 @@
                 Text="Order"
                 WidthRequest="150" />-->
 
-            <Button
-                Command="{Binding NavigateToOrderPageCommand}"
-                CornerRadius="75"
-                FontAttributes="Bold"
-                FontSize="Large"
-                HeightRequest="150"
-                HorizontalOptions="Center"
-                Text="Order"
-                VerticalOptions="EndAndExpand"
-                WidthRequest="150" />
-        </VerticalStackLayout>
-    </ScrollView>
+        <Button
+            Command="{Binding NavigateToOrderPageCommand}"
+            CommandParameter="Delivery"
+            CornerRadius="25"
+            FontAttributes="Bold"
+            FontSize="Large"
+            Text="Delivery"
+            VerticalOptions="End" />
+
+        <Button
+            Command="{Binding NavigateToOrderPageCommand}"
+            CommandParameter="Carryout"
+            CornerRadius="25"
+            FontAttributes="Bold"
+            FontSize="Large"
+            Text="Carryout"
+            VerticalOptions="End" />
+
+        <Label Text="Sign In" HorizontalOptions="Center" FontSize="Medium" TextDecorations="Underline">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding NavigateToSignInCommand}" />
+            </Label.GestureRecognizers>
+        </Label>
+
+
+    </VerticalStackLayout>
 </ContentPage>

@@ -14,6 +14,7 @@ public partial class AppShell : Shell
 
         Routing.RegisterRoute(nameof(OrderPage), typeof(OrderPage));
         Routing.RegisterRoute(nameof(CheckoutPage), typeof(CheckoutPage));
+        Routing.RegisterRoute(nameof(SignInPage), typeof(SignInPage));
     }
 
     private bool isFlyoutOpen;

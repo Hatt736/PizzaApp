@@ -217,19 +217,25 @@
                         <VisualState x:Name="Normal">
                             <VisualState.Setters>
                                 <Setter Property="SelectedItem"  Value="{AppThemeBinding Light={StaticResource LightSecondary}, Dark={StaticResource DarkSecondary}}" />
-                                --><!--<Setter Property="TitleColor" Value="{AppThemeBinding Light={StaticResource DarkGray}, Dark={StaticResource LightGray}}" />--><!--
+    -->
+    <!--<Setter Property="TitleColor" Value="{AppThemeBinding Light={StaticResource DarkGray}, Dark={StaticResource LightGray}}" />-->
+    <!--
                             </VisualState.Setters>
-                        </VisualState>  
+                        </VisualState>
                         <VisualState x:Name="Selected">
                             <VisualState.Setters>
                             <Setter Property="SelectedItem"  Value="{AppThemeBinding Light={StaticResource DarkSecondary}, Dark={StaticResource LightSecondary}}" />
-                                --><!--<Setter Property="TitleColor" Value="{AppThemeBinding Light={StaticResource DarkGray}, Dark={StaticResource LightGray}}" />--><!--
+    -->
+    <!--<Setter Property="TitleColor" Value="{AppThemeBinding Light={StaticResource DarkGray}, Dark={StaticResource LightGray}}" />-->
+    <!--
                             </VisualState.Setters>
                         </VisualState>
                         <VisualState x:Name="Disabled">
                             <VisualState.Setters>
-                                --><!--<Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}" />
-                                <Setter Property="TitleColor" Value="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}" />--><!--
+    -->
+    <!--<Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}" />
+                                <Setter Property="TitleColor" Value="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}" />-->
+    <!--
                             </VisualState.Setters>
                         </VisualState>
                     </VisualStateGroup>

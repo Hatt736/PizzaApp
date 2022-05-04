@@ -24,9 +24,40 @@ namespace PizzaApp.ViewModels
             myVar ??
             (myVar = new Command<object>(async (x) => await ExecuteMyCommand(x)));
 
-        private async Task ExecuteMyCommand(object x)
+        private async Task ExecuteMyCommand(object parameter)
         {
-            await Shell.Current.GoToAsync(nameof(OrderPage));
+            if ((string)parameter == "Delivery")
+            {
+                //Get users name and address
+                await Shell.Current.GoToAsync(nameof(OrderPage));
+
+            }
+            else
+            {
+                await Shell.Current.GoToAsync(nameof(OrderPage));
+            }
+
+            
+        }
+
+        private ICommand navigateToSettingsCommand;
+        public ICommand NavigateToSettingsCommand =>
+        navigateToSettingsCommand ??
+        (navigateToSettingsCommand = new Command<object>(async (x) => await ExecuteNavigateToSettingsCommand(x)));
+
+        private async Task ExecuteNavigateToSettingsCommand(object obj)
+        {
+            await Shell.Current.GoToAsync(nameof(SettingsPage));
+        }
+
+        private ICommand navigateToSignInCommand;
+        public ICommand NavigateToSignInCommand =>
+        navigateToSignInCommand ??
+        (navigateToSignInCommand = new Command<object>(async (x) => await ExecuteNavigateToSignInCommand(x)));
+
+        private async Task ExecuteNavigateToSignInCommand(object obj)
+        {
+            await Shell.Current.GoToAsync(nameof(SignInPage));
         }
     }
 }

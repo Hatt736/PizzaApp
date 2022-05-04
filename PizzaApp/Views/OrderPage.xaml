@@ -10,7 +10,11 @@
     Title="Order Page"
     x:DataType="viewModels:OrderPageViewModel">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Command="{Binding ToggleCartCommand}" Text="Cart" />
+        <ToolbarItem Command="{Binding ToggleCartCommand}" >
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="FAS-900" Glyph="&#xf07a;" /> 
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
     </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <converters:InverseBoolConverter x:Key="InverseBoolConverter" />

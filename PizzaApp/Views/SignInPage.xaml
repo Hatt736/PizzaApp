@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PizzaApp.SignInPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="SignInPage">
+    <StackLayout Margin="20">
+
+        <Label
+            FontAttributes="Bold"
+            FontSize="Medium"
+            HorizontalOptions="Center"
+            Text="Sign In"
+            VerticalOptions="Center" />
+
+        <Label
+            Margin="0,20"
+            Text="Email Address"
+            VerticalOptions="Center" />
+
+        <Entry />
+
+        <Label
+            Margin="0,20"
+            Text="Password"
+            VerticalOptions="Center" />
+
+        <Entry IsPassword="True" />
+
+        <HorizontalStackLayout>
+            <CheckBox
+                Margin="0,10"
+                BackgroundColor="Transparent"
+                HeightRequest="30"
+                IsChecked="true"
+                Color="White" />
+            <Label Text="Remember Me" VerticalTextAlignment="Center" />
+        </HorizontalStackLayout>
+
+        <Label HorizontalTextAlignment="Center" Text="Need help signing in?" />
+        
+        <BoxView HeightRequest="1"  Margin="0,40"/>
+        
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Label HorizontalTextAlignment="Center" Text="Don't have an account?" />
+            <Label
+                Margin="10,0"
+                HorizontalTextAlignment="Center"
+                Text="Sign up?" />
+        </HorizontalStackLayout>
+
+
+
+
+
+        <Button
+            Margin="0,50"
+            Command="{Binding SignInCommand}"
+            CornerRadius="25"
+            Text="Sign In" />
+
+
+
+
+    </StackLayout>
+</ContentPage>
