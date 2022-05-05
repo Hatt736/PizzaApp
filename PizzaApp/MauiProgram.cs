@@ -1,4 +1,6 @@
-﻿using PizzaApp.Repositories;
+﻿using CommunityToolkit.Maui;
+
+using PizzaApp.Repositories;
 using PizzaApp.ViewModels;
 using PizzaApp.Views;
 
@@ -28,7 +30,8 @@ public static class MauiProgram
 		builder.Services.AddTransient<CartPage>();
 		builder.Services.AddTransient<CartPageViewModel>();
 		builder.Services.AddTransient<CheckoutPage>();
-		builder.Services.AddTransient<CheckoutPageViewModel>();
+		builder.Services.AddTransient<CheckoutPageViewModel>(); 
+		builder.UseMauiApp<App>().UseMauiCommunityToolkit();
 		return builder.Build();
 	}
 }

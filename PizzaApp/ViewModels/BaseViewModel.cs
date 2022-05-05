@@ -5,6 +5,10 @@ namespace PizzaApp.ViewModels
 {
     public class BaseViewModel  : INotifyPropertyChanged 
     {
+        public BaseViewModel()
+        {
+            CartItemsQuanity = "99";
+        }
         public INavigation Navigation { get; set; }
 
 
@@ -18,5 +22,20 @@ namespace PizzaApp.ViewModels
 
             changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+
+
+        private string cartItemsQuanity;
+        public string CartItemsQuanity
+        {
+            get { return cartItemsQuanity; }
+            set
+            {
+                cartItemsQuanity = value;
+                OnPropertyChanged();
+            }
+        }
+
+
     }
 }

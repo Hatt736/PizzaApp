@@ -5,15 +5,27 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:models="clr-namespace:PizzaApp.Models"
     xmlns:viewModels="clr-namespace:PizzaApp.ViewModels"
-    x:DataType="viewModels:CartPageViewModel">
-    <Grid Margin="5" RowDefinitions="25,5,*,5,45,40">
+    x:DataType="viewModels:CartPageViewModel"    
+    xmlns:fontawesome="clr-namespace:FontAwesome;assembly=PizzaApp" 
+    Shell.PresentationMode="ModalAnimated">
+    <Grid Margin="5" RowDefinitions="60, 5,*,5,45,40">
 
+        <Button
+            Grid.Row="0"
+            Margin="5, 3"
+            BackgroundColor="Transparent"
+            Clicked="Close_Button_Clicked"
+            FontFamily="FAS-900"
+            FontSize="Large"
+            HorizontalOptions="End"
+            Text="{x:Static fontawesome:FontAwesomeIcons.RectangleXmark}" />
         <Label
             Grid.Row="0"
             FontSize="Medium"
             HorizontalOptions="Center"
             Text="Your Items!"
-            VerticalOptions="Center" />
+            VerticalOptions="End"
+            VerticalTextAlignment="End" />
 
         <BoxView
             Grid.Row="1"

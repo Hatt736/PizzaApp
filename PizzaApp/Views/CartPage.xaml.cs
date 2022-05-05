@@ -10,4 +10,9 @@ public partial class CartPage : ContentPage
 
 		BindingContext = vm;
 	}
+
+    private void Close_Button_Clicked(object sender, EventArgs e)
+    {
+		Shell.Current.GoToAsync("..");
+	}
 }

@@ -1,6 +1,7 @@
 ﻿using PizzaApp.Models;
 using PizzaApp.Repositories;
 using PizzaApp.Views;
+
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 
@@ -64,21 +65,21 @@ namespace PizzaApp.ViewModels
         private ICommand selectItemCommand;
         public ICommand SelectItemCommand =>
         selectItemCommand ??
-        (selectItemCommand = new Command<object>((x) => ExecuteSelectItemCommand(x)));
+        (selectItemCommand = new Command<object>(async (x) => await ExecuteSelectItemCommand(x)));
 
-        private void ExecuteSelectItemCommand(object selection)
+        private async Task ExecuteSelectItemCommand(object selection)
         {
-            if (selection == null)
-                return;
-
-            var selectedItem = selection as TakeoutMenuItem;
-
-            selection = null;
-
-            //if (SelectedItem == null)
+            //if (selection == null)
             //    return;
 
-           // var selectedItem = SelectedItem as TakeoutMenuItem;
+            // var selectedItem = selection as TakeoutMenuItem;
+
+            //  selection = null;
+
+            if (SelectedItem == null)
+                return;
+
+            var selectedItem = SelectedItem as TakeoutMenuItem;
 
             string name = selectedItem.Name;
 
@@ -90,9 +91,9 @@ namespace PizzaApp.ViewModels
 
             Globals.Subtotal = subtotal;
 
-            
+            await Task.Delay(100);
 
-          // SelectedItem = null;
+            SelectedItem = null;
         }
 
         private void CalculateQuanities(string name, double price)
@@ -145,7 +146,7 @@ namespace PizzaApp.ViewModels
             }
         }
 
-   
+
     }
 }
 
