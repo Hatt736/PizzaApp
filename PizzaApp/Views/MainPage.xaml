@@ -18,7 +18,7 @@
         VerticalOptions="FillAndExpand">
 
         <Label
-            FontSize="60"
+            FontSize="50"
             HorizontalOptions="Center"
             SemanticProperties.HeadingLevel="Level1"
             Text="Hatt's Pizza!" />

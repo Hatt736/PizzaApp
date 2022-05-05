@@ -42,6 +42,7 @@
                 ItemsSource="{Binding GroupedTakeoutCollection}"
                 SelectedItem="{Binding SelectedItem}"
                 SelectionChangedCommand="{Binding SelectItemCommand}"
+                SelectionChangedCommandParameter="{Binding SelectedItem}"
                 SelectionMode="Single"
                 VerticalOptions="StartAndExpand">
                 <CollectionView.GroupHeaderTemplate>

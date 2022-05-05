@@ -68,17 +68,17 @@ namespace PizzaApp.ViewModels
 
         private void ExecuteSelectItemCommand(object selection)
         {
-            //if (selection == null)
-            //    return;
+            if (selection == null)
+                return;
 
-            //  var selectedItem = selection as TakeoutMenuItem;
+            var selectedItem = selection as TakeoutMenuItem;
 
             selection = null;
 
-            if (SelectedItem == null)
-                return;
+            //if (SelectedItem == null)
+            //    return;
 
-            var selectedItem = SelectedItem as TakeoutMenuItem;
+           // var selectedItem = SelectedItem as TakeoutMenuItem;
 
             string name = selectedItem.Name;
 
@@ -92,7 +92,7 @@ namespace PizzaApp.ViewModels
 
             
 
-           SelectedItem = null;
+          // SelectedItem = null;
         }
 
         private void CalculateQuanities(string name, double price)
