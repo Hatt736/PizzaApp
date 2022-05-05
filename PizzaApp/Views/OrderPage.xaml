@@ -61,7 +61,7 @@
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:TakeoutMenuItem">
-                        <HorizontalStackLayout HorizontalOptions="Fill">
+                        <HorizontalStackLayout HorizontalOptions="Fill" BackgroundColor="Transparent">
                             <Label
                                 FontAttributes="Bold"
                                 HorizontalTextAlignment="Start"
