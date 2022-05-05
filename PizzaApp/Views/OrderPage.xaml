@@ -5,14 +5,18 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:contentViews="clr-namespace:PizzaApp.Views.ContentViews"
     xmlns:converters="clr-namespace:PizzaApp.Converters"
+    xmlns:fontawesome="clr-namespace:FontAwesome"
     xmlns:models="clr-namespace:PizzaApp.Models"
     xmlns:viewModels="clr-namespace:PizzaApp.ViewModels"
     Title="Order Page"
     x:DataType="viewModels:OrderPageViewModel">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Command="{Binding ToggleCartCommand}" >
+        <ToolbarItem Command="{Binding NavigateToCartCommand}">
             <ToolbarItem.IconImageSource>
-                <FontImageSource FontFamily="FAS-900" Glyph="&#xf07a;" /> 
+                <FontImageSource
+                    FontFamily="FAS-900"
+                    Glyph="{x:Static fontawesome:FontAwesomeIcons.CartShopping}"
+                    Size="18" />
             </ToolbarItem.IconImageSource>
         </ToolbarItem>
     </ContentPage.ToolbarItems>
@@ -36,8 +40,8 @@
                 HorizontalOptions="Fill"
                 IsGrouped="True"
                 ItemsSource="{Binding GroupedTakeoutCollection}"
+                SelectedItem="{Binding SelectedItem}"
                 SelectionChangedCommand="{Binding SelectItemCommand}"
-                SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference MenuItemCollectionView}}"
                 SelectionMode="Single"
                 VerticalOptions="StartAndExpand">
                 <CollectionView.GroupHeaderTemplate>
@@ -58,9 +62,15 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:TakeoutMenuItem">
                         <HorizontalStackLayout HorizontalOptions="Fill">
+                            <Label
+                                FontAttributes="Bold"
+                                HorizontalTextAlignment="Start"
+                                Text="{Binding Name}" />
+                            <Label HorizontalTextAlignment="Center" Text="..............." />
+                            <Label HorizontalTextAlignment="End" Text="{Binding Price}" />
                             <VisualStateManager.VisualStateGroups>
                                 <VisualStateGroup x:Name="CommonStates">
-                                    <VisualState x:Name="Normal" >
+                                    <VisualState x:Name="Normal">
                                         <VisualState.Setters>
                                             <Setter Property="BackgroundColor" Value="Transparent" />
                                         </VisualState.Setters>
@@ -72,14 +82,7 @@
                                     </VisualState>
                                 </VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
-                            <Label
-                                FontAttributes="Bold"
-                                HorizontalTextAlignment="Start"
-                                Text="{Binding Name}" />
-                            <Label HorizontalTextAlignment="Center" Text="..............." />
-                            <Label HorizontalTextAlignment="End" Text="{Binding Price}" />
                         </HorizontalStackLayout>
-
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
@@ -103,10 +106,5 @@
                 Text="Create Custom Order!"
                 VerticalOptions="End" />
         </StackLayout>
-        <contentViews:CartCV
-            Grid.Row="0"
-            Margin="25"
-            IsVisible="{Binding ShoppingCartVisible}" />
-
     </Grid>
 </ContentPage>

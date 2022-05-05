@@ -6,6 +6,8 @@ namespace PizzaApp.Views;
 
 public partial class OrderPage : ContentPage
 {
+    private VisualElement lastElementSelected;
+
     public OrderPage(OrderPageViewModel vm)
     {
         InitializeComponent();
@@ -13,12 +15,14 @@ public partial class OrderPage : ContentPage
         BindingContext = vm;
     }
 
-    //private async void OnCartClick(object sender, EventArgs e)
+    //private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
     //{
-    //    var page = new CartPage();
-    //    page.BindingContext = new CartPageViewModel(new PizzaRepository());
-    //    //await Navigation.PushAsync<OrderPage>();
-    //    await Navigation.PushAsync(page);
+    //    if (lastElementSelected != null)
+    //        VisualStateManager.GoToState(lastElementSelected, "Normal");
+
+    //    VisualStateManager.GoToState((HorizontalStackLayout)sender, "Selected");
+
+    //    lastElementSelected = (HorizontalStackLayout)sender;
 
     //}
 }

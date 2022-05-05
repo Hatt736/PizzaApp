@@ -12,8 +12,9 @@ public partial class AppShell : Shell
 
         BindingContext = this;
 
-        Routing.RegisterRoute(nameof(OrderPage), typeof(OrderPage));
+        Routing.RegisterRoute(nameof(CartPage), typeof(CartPage));
         Routing.RegisterRoute(nameof(CheckoutPage), typeof(CheckoutPage));
+        Routing.RegisterRoute(nameof(OrderPage), typeof(OrderPage));
         Routing.RegisterRoute(nameof(SignInPage), typeof(SignInPage));
     }
 

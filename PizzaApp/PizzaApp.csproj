@@ -54,8 +54,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Remove="Resources\Fonts\FontAwesome.cs" />
 	  <Compile Remove="Resources\Fonts\FontAwesomeIcons.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiFont Remove="Resources\Fonts\FontAwesome.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -87,8 +90,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Views\ContentViews\CartCV.xaml.cs">
-	    <DependentUpon>CartCV.xaml</DependentUpon>
+	  <Compile Update="Views\CartPage.xaml.cs">
+	    <DependentUpon>CartPage.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Views\OrderPage.xaml.cs">
 	    <DependentUpon>OrderPage.xaml</DependentUpon>
@@ -99,7 +102,7 @@
 	  <MauiXaml Update="Views\CheckoutPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\ContentViews\CartCV.xaml">
+	  <MauiXaml Update="Views\CartPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\OrderPage.xaml">
@@ -111,6 +114,10 @@
 	  <MauiXaml Update="Views\SignInPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Views\ContentViews\" />
 	</ItemGroup>
 
 </Project>

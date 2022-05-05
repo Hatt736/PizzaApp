@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PizzaApp.Views.CartPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:PizzaApp.Models"
+    xmlns:viewModels="clr-namespace:PizzaApp.ViewModels"
+    x:DataType="viewModels:CartPageViewModel">
+    <Grid Margin="5" RowDefinitions="25,5,*,5,45,40">
+
+        <Label
+            Grid.Row="0"
+            FontSize="Medium"
+            HorizontalOptions="Center"
+            Text="Your Items!"
+            VerticalOptions="Center" />
+
+        <BoxView
+            Grid.Row="1"
+            Margin="10"
+            HeightRequest="1"
+            Color="{StaticResource DarkTextColor}" />
+
+        <!--<CollectionView
+            Grid.Row="2"
+            Margin="20"
+            ItemsSource="{Binding CartItems}">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout ItemSpacing="10" Orientation="Vertical" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:CartItem">
+                    <Grid ColumnDefinitions="*, 4*,2*" HorizontalOptions="Center">
+                        <Label
+                            Grid.Column="0"
+                            HorizontalTextAlignment="Start"
+                            Text="{Binding Quanity}" />
+                        <Label
+                            Grid.Column="1"
+                            HorizontalTextAlignment="Start"
+                            Text="{Binding Name}" />
+                        <Label
+                            Grid.Column="2"
+                            HorizontalTextAlignment="End"
+                            Text="{Binding Price, StringFormat=' {0:c}'}" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>-->
+
+        <BoxView
+            Grid.Row="3"
+            Margin="10"
+            HeightRequest="1"
+            Color="{StaticResource DarkTextColor}" />
+
+        <Label
+            Grid.Row="4"
+            FontSize="18"
+            HorizontalOptions="Center"
+            Text="{Binding Subtotal, StringFormat='Subtotal : {0:c}'}"
+            VerticalTextAlignment="Center" />
+
+        <Button
+            Grid.Row="5"
+            Margin="0"
+            Command="{Binding NavigateToCheckoutCommand}"
+            Text="Checkout" />
+    </Grid>
+</ContentPage>

@@ -1,5 +1,6 @@
 ﻿using PizzaApp.Models;
 using PizzaApp.Repositories;
+using PizzaApp.Views;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 
@@ -67,12 +68,17 @@ namespace PizzaApp.ViewModels
 
         private void ExecuteSelectItemCommand(object selection)
         {
-            if (selection == null)
-                return;
+            //if (selection == null)
+            //    return;
 
-            var selectedItem = selection as TakeoutMenuItem;
+            //  var selectedItem = selection as TakeoutMenuItem;
 
             selection = null;
+
+            if (SelectedItem == null)
+                return;
+
+            var selectedItem = SelectedItem as TakeoutMenuItem;
 
             string name = selectedItem.Name;
 
@@ -84,9 +90,9 @@ namespace PizzaApp.ViewModels
 
             Globals.Subtotal = subtotal;
 
-            Globals.Total = subtotal + (subtotal * Globals.SalesTax);
+            
 
-          //  SelectedItem = null;
+           SelectedItem = null;
         }
 
         private void CalculateQuanities(string name, double price)
@@ -117,14 +123,14 @@ namespace PizzaApp.ViewModels
             return amount;
         }
 
-        private ICommand toggleCartCommand;
-        public ICommand ToggleCartCommand =>
-        toggleCartCommand ??
-        (toggleCartCommand = new Command(ExecuteToggleCartCommand));
+        private ICommand navigateToCartCommand;
+        public ICommand NavigateToCartCommand =>
+        navigateToCartCommand ??
+        (navigateToCartCommand = new Command(async () => await ExecuteNavigateToCartCommand()));
 
-        private void ExecuteToggleCartCommand()
+        private async Task ExecuteNavigateToCartCommand()
         {
-            ShoppingCartVisible = !ShoppingCartVisible;
+            await Shell.Current.GoToAsync(nameof(CartPage));
         }
 
 
@@ -139,15 +145,7 @@ namespace PizzaApp.ViewModels
             }
         }
 
-        private ICommand navigateToCheckoutCommand;
-        public ICommand NavigateToCheckoutCommand =>
-        navigateToCheckoutCommand ??
-        (navigateToCheckoutCommand = new  Command<object>(async (x) => await ExecuteNavigateToCheckoutCommand(x)));
-
-        private async Task ExecuteNavigateToCheckoutCommand(object obj)
-        {
-            await Shell.Current.GoToAsync(nameof(CheckoutPage));
-        }
+   
     }
 }
 
