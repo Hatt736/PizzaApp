@@ -34,15 +34,16 @@
         <Frame
             Margin="40"
             Padding="0"
-            CornerRadius="120"
+            HeightRequest="300"
+            WidthRequest="300"
+            CornerRadius="150"
             HorizontalOptions="Center"
             IsClippedToBounds="True"
-            VerticalOptions="CenterAndExpand">
+            VerticalOptions="Center">
             <Image
                 Margin="0"
-                HeightRequest="250"
-                Source="pizza_main_picture.jpg"
-                WidthRequest="250" />
+                Aspect="AspectFit"
+                Source="pizza_main_picture.jpg" />
         </Frame>
 
         <!--<Button
