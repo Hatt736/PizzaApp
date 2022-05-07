@@ -14,7 +14,7 @@ public partial class AppShell : Shell
 
         quantity = 0;
 
-        ItemsQuantity.Text= quantity.ToString();
+      //  ItemsQuantity.Text= quantity.ToString();
 
         Routing.RegisterRoute(nameof(CartPage), typeof(CartPage));
         Routing.RegisterRoute(nameof(CheckoutPage), typeof(CheckoutPage));
@@ -45,12 +45,12 @@ public partial class AppShell : Shell
         IsFlyoutOpen = false;
     }
 
-    private async void Cart_Clicked(object sender, EventArgs e)
-    {
-        quantity++;
+    //private async void Cart_Clicked(object sender, EventArgs e)
+    //{
+    //    quantity++;
 
-        ItemsQuantity.Text= quantity.ToString();
+    //    ItemsQuantity.Text= quantity.ToString();
 
-        await Shell.Current.GoToAsync(nameof(CartPage));
-    }
+    //    await Shell.Current.GoToAsync(nameof(CartPage));
+    //}
 }

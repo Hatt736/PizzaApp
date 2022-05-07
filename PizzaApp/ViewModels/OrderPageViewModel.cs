@@ -120,17 +120,26 @@ namespace PizzaApp.ViewModels
         }
 
 
-        private bool shoppingCartVisible;
-        public bool ShoppingCartVisible
-        {
-            get { return shoppingCartVisible; }
-            set
-            {
-                shoppingCartVisible = value;
-                OnPropertyChanged();
-            }
-        }
+        //private bool shoppingCartVisible;
+        //public bool ShoppingCartVisible
+        //{
+        //    get { return shoppingCartVisible; }
+        //    set
+        //    {
+        //        shoppingCartVisible = value;
+        //        OnPropertyChanged();
+        //    }
+        //}
 
+        private ICommand navigateToCartPageCommand;
+        public ICommand NavigateToCartPageCommand =>
+        navigateToCartPageCommand ??
+        (navigateToCartPageCommand = new Command<object>(async (x) => await ExecuteNavigateToCartPageCommand(x)));
+
+        private async Task ExecuteNavigateToCartPageCommand(object obj)
+        {
+            await Shell.Current.GoToAsync(nameof(CartPage));
+        }
 
     }
 }

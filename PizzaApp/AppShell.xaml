@@ -53,7 +53,7 @@
             </Style>
         </ResourceDictionary>
     </Shell.Resources>
-    <Shell.TitleView>
+    <!--<Shell.TitleView>
         <Grid
             Margin="20"
             ColumnDefinitions="*,30"
@@ -82,7 +82,7 @@
                 BackgroundColor="Transparent"
                 Clicked="Cart_Clicked" />
         </Grid>
-    </Shell.TitleView>
+    </Shell.TitleView>-->
 
     <Shell.FlyoutHeaderTemplate>
         <DataTemplate>

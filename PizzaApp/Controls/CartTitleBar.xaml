@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Grid
+    x:Class="PizzaApp.CartTitleBar"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Margin="20"
+    ColumnDefinitions="*,30"
+    HeightRequest="50"
+    HorizontalOptions="End">
+   
+    <!--<Label
+        Grid.Row="0"
+        Grid.Column="1"
+        FontFamily="FAS-900"
+        FontSize="25"
+        HorizontalTextAlignment="Center"
+        Text="{x:Static fontawesome:FontAwesomeIcons.CartShopping}" />-->
+
+    <Label
+        x:Name="ItemsQuantity"
+        Grid.Row="0"
+        Grid.Column="1"
+        FontAttributes="Bold"
+        FontSize="12"
+        HorizontalTextAlignment="Center"
+        TextColor="Red"
+        ZIndex="5" />
+    <!--<Button
+        Grid.Row="0"
+        Grid.Column="1"
+        BackgroundColor="Transparent"
+        Clicked="Cart_Clicked" />-->
+
+</Grid>

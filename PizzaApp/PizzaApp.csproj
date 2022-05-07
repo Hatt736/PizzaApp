@@ -91,6 +91,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Controls\CartTitleBar.xaml.cs">
+	    <DependentUpon>CartTitleBar.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\CartPage.xaml.cs">
 	    <DependentUpon>CartPage.xaml</DependentUpon>
 	  </Compile>
@@ -100,6 +103,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Controls\CartTitleBar.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\CheckoutPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

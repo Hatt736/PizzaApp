@@ -9,24 +9,22 @@
     xmlns:viewModels="clr-namespace:PizzaApp.ViewModels"
     Title="Order Page"
     x:DataType="viewModels:OrderPageViewModel">
-    <!--<ContentPage.ToolbarItems>
-        <ToolbarItem Command="{Binding NavigateToCartCommand}"  >
-            <ToolbarItem.Text>"99"</ToolbarItem.Text>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding NavigateToCartPageCommand}"  >
             <ToolbarItem.IconImageSource>
                 <FontImageSource
                     FontFamily="FAS-900"
                     Glyph="{x:Static fontawesome:FontAwesomeIcons.CartShopping}"
-                    Size="18"
+                    Size="20"
                     Color="{AppThemeBinding Light={StaticResource LightPrimary},
                                             Dark={StaticResource DarkPrimary}}" />
             </ToolbarItem.IconImageSource>
+            <ToolbarItem.Text>"99"</ToolbarItem.Text>
         </ToolbarItem>
-    </ContentPage.ToolbarItems>-->
-    <ContentPage.Resources>
-        <converters:InverseBoolConverter x:Key="InverseBoolConverter" />
-    </ContentPage.Resources>
+    </ContentPage.ToolbarItems>
+  
     <Grid RowDefinitions="*">
-        <StackLayout Padding="25" IsVisible="{Binding ShoppingCartVisible, Converter={StaticResource InverseBoolConverter}}">
+        <StackLayout Padding="25" >
 
             <Label
                 Margin="20"

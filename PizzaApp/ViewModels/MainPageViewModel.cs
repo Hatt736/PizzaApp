@@ -58,6 +58,16 @@ namespace PizzaApp.ViewModels
         private async Task ExecuteNavigateToSignInCommand(object obj)
         {
             await Shell.Current.GoToAsync(nameof(SignInPage));
+        } 
+        
+        private ICommand navigateToCartPageCommand;
+        public ICommand NavigateToCartPageCommand =>
+        navigateToCartPageCommand ??
+        (navigateToCartPageCommand = new Command<object>(async (x) => await ExecuteNavigateToCartPageCommand(x)));
+
+        private async Task ExecuteNavigateToCartPageCommand(object obj)
+        {
+            await Shell.Current.GoToAsync(nameof(CartPage));
         }
     }
 }

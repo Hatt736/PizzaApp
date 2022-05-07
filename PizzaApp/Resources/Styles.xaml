@@ -485,7 +485,7 @@
         BasedOn="{StaticResource BaseStyle}"
         TargetType="ShellItem" />
 
-       <Style TargetType="NavigationPage">
+    <Style TargetType="NavigationPage">
         <Setter Property="BarBackgroundColor" Value="{AppThemeBinding Light={StaticResource LightPrimary}, Dark={StaticResource DarkPrimary}}" />
         <Setter Property="BarTextColor" Value="{AppThemeBinding Light={StaticResource LightSecondary}, Dark={StaticResource DarkSecondary}}" />
         <Setter Property="IconColor" Value="{AppThemeBinding Light={StaticResource LightSecondary}, Dark={StaticResource DarkSecondary}}" />
