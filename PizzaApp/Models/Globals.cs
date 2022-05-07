@@ -10,8 +10,8 @@ namespace PizzaApp.Models
     {
         public static List<CartItem> CartItems { get; set; }
         public static double Subtotal { get; set; }
-        public static double Total { get; set; }
-        public static double SalesTax { get; set; }
+        //public static double Total { get; set; }
+        //public static double SalesTax { get; set; }
         public static double SalesTaxRate { get; set; } = .06;
     }
 }

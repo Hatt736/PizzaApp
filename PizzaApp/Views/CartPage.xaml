@@ -33,7 +33,7 @@
             HeightRequest="1"
             Color="{StaticResource DarkTextColor}" />
 
-        <!--<CollectionView
+        <CollectionView
             Grid.Row="2"
             Margin="20"
             ItemsSource="{Binding CartItems}">
@@ -58,7 +58,7 @@
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
-        </CollectionView>-->
+        </CollectionView>
 
         <BoxView
             Grid.Row="3"

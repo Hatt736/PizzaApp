@@ -11,6 +11,8 @@ namespace PizzaApp.ViewModels
     {
         ITakeoutRepository _takeoutRepository;
 
+        Order CurrentOrder;
+
         public OrderPageViewModel(ITakeoutRepository takeoutRepository)
         {
             _takeoutRepository = takeoutRepository;
@@ -19,26 +21,13 @@ namespace PizzaApp.ViewModels
 
             Toppings = new ObservableCollection<Topping>(_takeoutRepository.CreateToppingCollection());
 
-            CartItems = new ObservableCollection<CartItem>();
+            CurrentOrder = new Order();
         }
 
         public ObservableCollection<TakeoutItemCategoryGroup> GroupedTakeoutCollection { get; set; }
-        public ObservableCollection<Topping> Toppings { get; set; }
-
-
-        private ObservableCollection<CartItem> cartItems;
-        public ObservableCollection<CartItem> CartItems
-        {
-            get { return cartItems; }
-            set
-            {
-                cartItems = value;
-                OnPropertyChanged();
-            }
-        }
+        public ObservableCollection<Topping> Toppings { get; set; }             
 
         private double subtotal;
-
         public double Subtotal
         {
             get { return subtotal; }
@@ -89,7 +78,7 @@ namespace PizzaApp.ViewModels
 
             Subtotal = AddSubTotal();
 
-            Globals.Subtotal = subtotal;
+            Globals.Subtotal = Subtotal;
 
             await Task.Delay(100);
 
@@ -98,7 +87,7 @@ namespace PizzaApp.ViewModels
 
         private void CalculateQuanities(string name, double price)
         {
-            foreach (var item in CartItems)
+            foreach (var item in CurrentOrder.TakeOutOrderList)
             {
                 if (item.Name == name)
                 {
@@ -109,14 +98,16 @@ namespace PizzaApp.ViewModels
                 }
             }
 
-            CartItems.Add(new CartItem(name, price, 1));
+            CurrentOrder.TakeOutOrderList.Add(new CartItem(name, price, 1));
+            
+            Globals.CartItems.Add(new CartItem(name, price, 1));
         }
 
         private double AddSubTotal()
         {
             double amount = 0.00;
 
-            foreach (var item in CartItems)
+            foreach (var item in CurrentOrder.TakeOutOrderList)
             {
                 amount += item.Price;
             }

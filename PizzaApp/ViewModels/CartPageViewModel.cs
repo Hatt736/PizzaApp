@@ -1,7 +1,7 @@
 ﻿using PizzaApp.Models;
-
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,8 +14,21 @@ namespace PizzaApp.ViewModels
         public CartPageViewModel()
         {
             Subtotal = Globals.Subtotal;
+
+            CartItems = new ObservableCollection<CartItem>(Globals.CartItems);
         }
 
+        private ObservableCollection<CartItem> cartItems;
+        public ObservableCollection<CartItem> CartItems
+        {
+            get { return cartItems; }
+            set
+            {
+                cartItems = value;
+                OnPropertyChanged();
+            }
+        }
+        
         private double subtotal;
         public double Subtotal
         {
