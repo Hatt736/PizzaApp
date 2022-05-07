@@ -6,25 +6,14 @@
     xmlns:models="clr-namespace:PizzaApp.Models"
     xmlns:viewModels="clr-namespace:PizzaApp.ViewModels"
     x:DataType="viewModels:CartPageViewModel"    
-    xmlns:fontawesome="clr-namespace:FontAwesome;assembly=PizzaApp" 
-    Shell.PresentationMode="ModalAnimated">
-    <Grid Margin="5" RowDefinitions="60, 5,*,5,45,40">
-
-        <Button
-            Grid.Row="0"
-            Margin="5, 3"
-            BackgroundColor="Transparent"
-            Clicked="Close_Button_Clicked"
-            FontFamily="FAS-900"
-            FontSize="Large"
-            HorizontalOptions="End"
-            Text="{x:Static fontawesome:FontAwesomeIcons.RectangleXmark}" />
+    xmlns:fontawesome="clr-namespace:FontAwesome;assembly=PizzaApp"  >
+    <Grid Margin="5" RowDefinitions="60, 5,Auto,5,60,40">
+        
         <Label
             Grid.Row="0"
             FontSize="Medium"
             HorizontalOptions="Center"
             Text="Your Items!"
-            VerticalOptions="End"
             VerticalTextAlignment="End" />
 
         <BoxView
@@ -45,11 +34,9 @@
                     <Grid ColumnDefinitions="*, 4*,2*" HorizontalOptions="Center">
                         <Label
                             Grid.Column="0"
-                            HorizontalTextAlignment="Start"
                             Text="{Binding Quanity}" />
                         <Label
                             Grid.Column="1"
-                            HorizontalTextAlignment="Start"
                             Text="{Binding Name}" />
                         <Label
                             Grid.Column="2"
@@ -75,7 +62,7 @@
 
         <Button
             Grid.Row="5"
-            Margin="0"
+            CornerRadius="25"
             Command="{Binding NavigateToCheckoutCommand}"
             Text="Checkout" />
     </Grid>

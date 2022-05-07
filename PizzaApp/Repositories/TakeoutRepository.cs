@@ -13,10 +13,19 @@ namespace PizzaApp.Repositories
     {
         ObservableCollection<TakeoutItemCategoryGroup> CreateGroupedMenuItemsCollection();
         ObservableCollection<Topping> CreateToppingCollection();
+
+        Order CurrentOrder { get; set; }
     }
 
     public partial class TakeoutRepository : ITakeoutRepository
     {
+        public Order CurrentOrder { get; set; }
+
+        public TakeoutRepository()
+        {
+            CurrentOrder = new Order();
+        }
+
         public ObservableCollection<Topping> CreateToppingCollection()
         {
             return new ObservableCollection<Topping>

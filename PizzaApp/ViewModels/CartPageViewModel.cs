@@ -1,4 +1,6 @@
 ﻿using PizzaApp.Models;
+using PizzaApp.Repositories;
+
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,11 +13,15 @@ namespace PizzaApp.ViewModels
 {
     public class CartPageViewModel : BaseViewModel
     {
-        public CartPageViewModel()
-        {
-            Subtotal = Globals.Subtotal;
+        ITakeoutRepository _takeoutRepository;
 
-            CartItems = new ObservableCollection<CartItem>(Globals.CartItems);
+        public CartPageViewModel(ITakeoutRepository takeoutRepository)
+        {
+            _takeoutRepository = takeoutRepository;
+
+            Subtotal = _takeoutRepository.CurrentOrder.Subtotal;
+
+            CartItems = new ObservableCollection<CartItem>(_takeoutRepository.CurrentOrder.TakeOutOrderList);
         }
 
         private ObservableCollection<CartItem> cartItems;
@@ -28,7 +34,7 @@ namespace PizzaApp.ViewModels
                 OnPropertyChanged();
             }
         }
-        
+
         private double subtotal;
         public double Subtotal
         {

@@ -11,8 +11,6 @@ namespace PizzaApp.ViewModels
     {
         ITakeoutRepository _takeoutRepository;
 
-        Order CurrentOrder;
-
         public OrderPageViewModel(ITakeoutRepository takeoutRepository)
         {
             _takeoutRepository = takeoutRepository;
@@ -20,12 +18,10 @@ namespace PizzaApp.ViewModels
             GroupedTakeoutCollection = new ObservableCollection<TakeoutItemCategoryGroup>(_takeoutRepository.CreateGroupedMenuItemsCollection());
 
             Toppings = new ObservableCollection<Topping>(_takeoutRepository.CreateToppingCollection());
-
-            CurrentOrder = new Order();
         }
 
         public ObservableCollection<TakeoutItemCategoryGroup> GroupedTakeoutCollection { get; set; }
-        public ObservableCollection<Topping> Toppings { get; set; }             
+        public ObservableCollection<Topping> Toppings { get; set; }
 
         private double subtotal;
         public double Subtotal
@@ -78,7 +74,7 @@ namespace PizzaApp.ViewModels
 
             Subtotal = AddSubTotal();
 
-            Globals.Subtotal = Subtotal;
+            _takeoutRepository.CurrentOrder.Subtotal = Subtotal;
 
             await Task.Delay(100);
 
@@ -87,7 +83,7 @@ namespace PizzaApp.ViewModels
 
         private void CalculateQuanities(string name, double price)
         {
-            foreach (var item in CurrentOrder.TakeOutOrderList)
+            foreach (var item in _takeoutRepository.CurrentOrder.TakeOutOrderList)
             {
                 if (item.Name == name)
                 {
@@ -98,16 +94,14 @@ namespace PizzaApp.ViewModels
                 }
             }
 
-            CurrentOrder.TakeOutOrderList.Add(new CartItem(name, price, 1));
-            
-            Globals.CartItems.Add(new CartItem(name, price, 1));
+            _takeoutRepository.CurrentOrder.TakeOutOrderList.Add(new CartItem(name, price, 1));
         }
 
         private double AddSubTotal()
         {
             double amount = 0.00;
 
-            foreach (var item in CurrentOrder.TakeOutOrderList)
+            foreach (var item in _takeoutRepository.CurrentOrder.TakeOutOrderList)
             {
                 amount += item.Price;
             }

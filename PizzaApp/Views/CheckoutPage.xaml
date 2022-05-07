@@ -7,7 +7,7 @@
     Title="CheckoutPage"
     x:DataType="viewModels:CheckoutPageViewModel">
     
-    <Grid RowDefinitions="*,30,30,30">
+    <Grid RowDefinitions="500,30,30,30">
         <Label Grid.Row="1"
             HorizontalOptions="Center"
             Text="{Binding Subtotal, StringFormat='Subtotal : {0:c}'}" />

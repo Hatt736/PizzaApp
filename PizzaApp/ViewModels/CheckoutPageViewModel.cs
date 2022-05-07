@@ -1,4 +1,5 @@
 ﻿using PizzaApp.Models;
+using PizzaApp.Repositories;
 
 using System;
 using System.Collections.Generic;
@@ -10,10 +11,14 @@ namespace PizzaApp.ViewModels
 {
     public class CheckoutPageViewModel : BaseViewModel
     {
-        public CheckoutPageViewModel()
+        ITakeoutRepository _takeoutRepository;
+
+        public CheckoutPageViewModel(ITakeoutRepository takeoutRepository)
         {
-            Subtotal = Globals.Subtotal;
-            SalesTax = Subtotal * Globals.SalesTaxRate;
+            _takeoutRepository = takeoutRepository;
+
+            Subtotal = _takeoutRepository.CurrentOrder.Subtotal;
+            SalesTax = Subtotal * Constants.SalesTaxRate;
             Total =  Subtotal + SalesTax;
         }
 
