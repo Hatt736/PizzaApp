@@ -22,6 +22,7 @@ public static class MauiProgram
 				fonts.AddFont("Font Awesome 6 Free-Solid-900", "FAS-900");
 			});
 
+		builder.Services.AddSingleton<IOrderRepository, OrderRepository>();
 		builder.Services.AddSingleton<ITakeoutRepository, TakeoutRepository>();
 		builder.Services.AddTransient<MainPage>();
 		builder.Services.AddTransient<MainPageViewModel>();

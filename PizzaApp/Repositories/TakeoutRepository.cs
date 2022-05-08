@@ -13,33 +13,14 @@ namespace PizzaApp.Repositories
     {
         ObservableCollection<TakeoutItemCategoryGroup> CreateGroupedMenuItemsCollection();
         ObservableCollection<Topping> CreateToppingCollection();
-
-        Order CurrentOrder { get; set; }
     }
 
     public partial class TakeoutRepository : ITakeoutRepository
     {
-        public Order CurrentOrder { get; set; }
-
         public TakeoutRepository()
         {
-            CurrentOrder = new Order();
         }
-
-        public ObservableCollection<Topping> CreateToppingCollection()
-        {
-            return new ObservableCollection<Topping>
-            {
-                new Topping { Name = "Pepperoni" },
-                new Topping { Name = "Green Peppers" },
-                new Topping { Name = "Sausage" },
-                new Topping { Name = "Banana Peppers" },
-                new Topping { Name = "Ham" },
-                new Topping { Name = "Bacon" },
-                new Topping { Name = "Onions" },
-                new Topping { Name = "Cheese" }
-            };
-        }
+           
 
         private List<TakeoutMenuItem> CreateTakeoutMenuItemList()
         {
@@ -98,6 +79,21 @@ namespace PizzaApp.Repositories
 
 
             return new ObservableCollection<TakeoutItemCategoryGroup>(groupedList);
+        }
+
+        public ObservableCollection<Topping> CreateToppingCollection()
+        {
+            return new ObservableCollection<Topping>
+            {
+                new Topping { Name = "Pepperoni" },
+                new Topping { Name = "Green Peppers" },
+                new Topping { Name = "Sausage" },
+                new Topping { Name = "Banana Peppers" },
+                new Topping { Name = "Ham" },
+                new Topping { Name = "Bacon" },
+                new Topping { Name = "Onions" },
+                new Topping { Name = "Cheese" }
+            };
         }
     }
 }

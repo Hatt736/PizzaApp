@@ -12,12 +12,15 @@ namespace PizzaApp.ViewModels
     public class CheckoutPageViewModel : BaseViewModel
     {
         ITakeoutRepository _takeoutRepository;
+        IOrderRepository _orderRepository;
 
-        public CheckoutPageViewModel(ITakeoutRepository takeoutRepository)
+        public CheckoutPageViewModel(ITakeoutRepository takeoutRepository, IOrderRepository orderRepository)
         {
             _takeoutRepository = takeoutRepository;
 
-            Subtotal = _takeoutRepository.CurrentOrder.Subtotal;
+            _orderRepository = orderRepository;
+
+            Subtotal = _orderRepository.CurrentOrder.Subtotal;
             SalesTax = Subtotal * Constants.SalesTaxRate;
             Total =  Subtotal + SalesTax;
         }

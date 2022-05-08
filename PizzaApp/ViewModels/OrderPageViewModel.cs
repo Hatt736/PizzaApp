@@ -10,10 +10,13 @@ namespace PizzaApp.ViewModels
     public class OrderPageViewModel : BaseViewModel
     {
         ITakeoutRepository _takeoutRepository;
+        IOrderRepository _orderRepository;
 
-        public OrderPageViewModel(ITakeoutRepository takeoutRepository)
+        public OrderPageViewModel(ITakeoutRepository takeoutRepository, IOrderRepository orderRepository)
         {
             _takeoutRepository = takeoutRepository;
+
+            _orderRepository = orderRepository;
 
             GroupedTakeoutCollection = new ObservableCollection<TakeoutItemCategoryGroup>(_takeoutRepository.CreateGroupedMenuItemsCollection());
 
@@ -74,7 +77,7 @@ namespace PizzaApp.ViewModels
 
             Subtotal = AddSubTotal();
 
-            _takeoutRepository.CurrentOrder.Subtotal = Subtotal;
+            _orderRepository.CurrentOrder.Subtotal = Subtotal;
 
             await Task.Delay(100);
 
@@ -83,7 +86,7 @@ namespace PizzaApp.ViewModels
 
         private void CalculateQuanities(string name, double price)
         {
-            foreach (var item in _takeoutRepository.CurrentOrder.TakeOutOrderList)
+            foreach (var item in _orderRepository.CurrentOrder.TakeOutOrderList)
             {
                 if (item.Name == name)
                 {
@@ -94,14 +97,14 @@ namespace PizzaApp.ViewModels
                 }
             }
 
-            _takeoutRepository.CurrentOrder.TakeOutOrderList.Add(new CartItem(name, price, 1));
+            _orderRepository.CurrentOrder.TakeOutOrderList.Add(new CartItem(name, price, 1));
         }
 
         private double AddSubTotal()
         {
             double amount = 0.00;
 
-            foreach (var item in _takeoutRepository.CurrentOrder.TakeOutOrderList)
+            foreach (var item in _orderRepository.CurrentOrder.TakeOutOrderList)
             {
                 amount += item.Price;
             }

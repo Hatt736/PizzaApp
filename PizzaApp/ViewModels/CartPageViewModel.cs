@@ -14,14 +14,17 @@ namespace PizzaApp.ViewModels
     public class CartPageViewModel : BaseViewModel
     {
         ITakeoutRepository _takeoutRepository;
+        IOrderRepository _orderRepository;
 
-        public CartPageViewModel(ITakeoutRepository takeoutRepository)
+        public CartPageViewModel(ITakeoutRepository takeoutRepository, IOrderRepository orderRepository)
         {
             _takeoutRepository = takeoutRepository;
 
-            Subtotal = _takeoutRepository.CurrentOrder.Subtotal;
+            _orderRepository = orderRepository;
 
-            CartItems = new ObservableCollection<CartItem>(_takeoutRepository.CurrentOrder.TakeOutOrderList);
+            Subtotal = _orderRepository.CurrentOrder.Subtotal;
+
+            CartItems = new ObservableCollection<CartItem>(_orderRepository.CurrentOrder.TakeOutOrderList);
         }
 
         private ObservableCollection<CartItem> cartItems;
