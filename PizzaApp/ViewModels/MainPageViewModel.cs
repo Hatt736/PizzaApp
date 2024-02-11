@@ -16,7 +16,15 @@ namespace PizzaApp.ViewModels
 
         public MainPageViewModel()
         {
-         
+           WelcomeMessage = "Hatt's Pizza!";
+        }
+
+
+        private string _welcomeMessage = "Default Message";
+        public string WelcomeMessage
+        {
+            get { return _welcomeMessage; }
+            set { _welcomeMessage = value; }
         }
 
         private ICommand myVar;

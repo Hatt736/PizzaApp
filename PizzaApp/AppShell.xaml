@@ -3,7 +3,7 @@
     x:Class="PizzaApp.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:views="clr-namespace:PizzaApp.Views"     
+    xmlns:views="clr-namespace:PizzaApp.Views"
     FlyoutIsPresented="{Binding IsFlyoutOpen}"
     Shell.FlyoutBehavior="Flyout">
 
@@ -52,15 +52,21 @@
     </Shell.Resources>
     <Shell.FlyoutHeaderTemplate>
         <DataTemplate>
-            <Grid HeightRequest="100" Padding="0">
-                 <Image
-                Margin="0"
+            <Grid Padding="0" HeightRequest="100">
+                <Image
+                    Margin="0"
                     Aspect="AspectFill"
-                Source="flyout_header_image.jpg" />
+                    Source="flyout_header_image.jpg" />
 
-                <Label Text="Hatt's" FontSize="50" FontAttributes="Bold" HorizontalTextAlignment="Center"  Margin=" 5, 20" TextColor="{StaticResource LightPrimary}"/>
+                <Label
+                    Margin="5,20"
+                    FontAttributes="Bold"
+                    FontSize="50"
+                    HorizontalTextAlignment="Center"
+                    Text="Hatt's"
+                    TextColor="{StaticResource LightPrimary}" />
                 <Grid.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding CloseFlyoutCommand}"/>
+                    <TapGestureRecognizer Command="{Binding CloseFlyoutCommand}" />
                 </Grid.GestureRecognizers>
             </Grid>
         </DataTemplate>

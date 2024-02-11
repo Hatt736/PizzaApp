@@ -5,11 +5,11 @@ namespace PizzaApp.Views;
 
 public partial class MainPage : ContentPage
 {
-	public MainPage(MainPageViewModel vm)
+	public MainPage()//MainPageViewModel vm)
 	{
 		InitializeComponent();
 
-		BindingContext = vm;
+		//BindingContext = vm;
 	}
 
 	//private async void OnOrderClicked(object sender, EventArgs e)
@@ -24,7 +24,8 @@ public partial class MainPage : ContentPage
 		var page = new SettingsPage();
 		//page.BindingContext = new OrderPageViewModel(new PizzaRepository());
 		//await Navigation.PushAsync<OrderPage>();
-		await Navigation.PushAsync(page);
+
+		//await Navigation.PushAsync(page);
 	}
 }
 

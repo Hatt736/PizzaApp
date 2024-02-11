@@ -4,10 +4,8 @@ namespace PizzaApp.Views;
 
 public partial class CartPage : ContentPage
 {
-	public CartPage(CartPageViewModel vm)
+	public CartPage()
 	{
 		InitializeComponent();
-
-		BindingContext = vm;
 	}
 }

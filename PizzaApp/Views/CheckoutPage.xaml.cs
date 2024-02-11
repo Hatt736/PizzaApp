@@ -4,10 +4,8 @@ namespace PizzaApp;
 
 public partial class CheckoutPage : ContentPage
 {
-	public CheckoutPage(CheckoutPageViewModel vm)
+	public CheckoutPage()
 	{
 		InitializeComponent();
-
-		BindingContext = vm;
 	}
 }
