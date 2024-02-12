@@ -22,7 +22,7 @@ public static class MauiProgram
 
         builder.Services.AddSingleton<ITakeoutRepository, TakeoutRepository>();
        // builder.Services.AddTransient<MainPage>();
-        builder.Services.AddTransient<MainPageViewModel>();
+       builder.Services.AddTransient<MainPageViewModel>();
         builder.Services.AddTransient<OrderPageViewModel>();
         builder.Services.AddTransient<CartPageViewModel>();
         builder.Services.AddTransient<CheckoutPageViewModel>();
