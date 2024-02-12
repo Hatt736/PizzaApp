@@ -16,7 +16,7 @@ namespace PizzaApp.ViewModels
 
         public MainPageViewModel()
         {
-           WelcomeMessage = "Hatt's Pizza!";
+           WelcomeMessage = "Hatt's Place!";
         }
 
 
